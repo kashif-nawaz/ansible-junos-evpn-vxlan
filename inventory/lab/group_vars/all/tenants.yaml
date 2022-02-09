@@ -1,0 +1,163 @@
+infra_nw:
+  - name: vrouter_transport
+    L3_if: yes
+    VRF: no
+    RE_DIST_Underlay: yes
+    MODE: ERB
+    vni: 300
+    subnet: 192.168.254.0/24
+    parent:
+     - leaf
+
+  - name: storage_access
+    L3_if: no
+    VRF: no
+    RE_DIST_Underlay: no
+    MODE: ERB
+    vni: 301
+    subnet: 192.168.253.0/24
+    parent:
+     - leaf
+
+  - name: storage_replication
+    L3_if: no
+    VRF: no
+    RE_DIST_Underlay: no
+    MODE: ERB
+    vni: 302
+    subnet: 192.168.252.0/24
+    parent:
+     - leaf
+  
+  - name: sriov_1001
+    L3_if: yes
+    VRF: yes
+    RE_DIST_Underlay: no
+    VRF_Route_Leak:
+      - sriov_1002
+      - sriov_1003
+      - nc_commm_test
+      - nc_commm_mgmt
+    MODE: CRB
+    vni: 1001
+    subnet: 192.168.111.0/24
+    parent:
+     - leaf
+     - spine
+    north_if: 
+    - vlan_id: 2001
+      phy_if: 
+       - parent: spine-01
+         IFD: xe-0/0/0
+       - parent: spine-02
+         IFD: xe-0/0/0
+
+  - name: sriov_1002
+    L3_if: yes
+    VRF: yes
+    RE_DIST_Underlay: no
+    VRF_Route_Leak:
+      - sriov_1001
+    MODE: CRB
+    vni: 1002
+    subnet: 192.168.112.0/24
+    parent:
+     - leaf-01
+     - spine
+    north_if: 
+    - vlan_id: 2002
+      phy_if: 
+       - parent: spine-01
+         IFD: xe-0/0/0
+       - parent: spine-02
+         IFD: xe-0/0/0
+
+  - name: sriov_1003
+    L3_if: yes
+    VRF: yes
+    RE_DIST_Underlay: no
+    VRF_Route_Leak:
+      - sriov_1001
+    MODE: CRB
+    vni: 1003
+    subnet: 192.168.113.0/24
+    parent:
+     - leaf-02
+     - spine-02
+    north_if: 
+    - vlan_id: 2003
+      phy_if: 
+       - parent: spine-02
+         IFD: xe-0/0/0
+
+overlay_nw:
+  - name: nc_commm_test 
+    subnet: 192.168.200.0/24
+    rt: 2004
+    VRF_Route_Leak:
+      - sriov_1001
+    parent:
+     - spine
+    north_if:  
+    - vlan_id: 2004 
+      phy_if: 
+       - parent: spine-01
+         IFD: xe-0/0/0
+       - parent: spine-02
+         IFD: xe-0/0/0
+
+  - name: nc_commm_mgmt 
+    subnet: 192.168.201.0/24
+    rt: 2005
+    VRF_Route_Leak:
+      - sriov_1001
+    parent:
+     - spine
+    north_if:  
+    - vlan_id: 2005 
+      phy_if: 
+       - parent: spine-01
+         IFD: xe-0/0/0
+       - parent: spine-02
+         IFD: xe-0/0/0
+
+
+
+north_if:
+  - vlan_id: 2001
+    QOS:
+      code_point: "010010"
+      name: CUST-BT-AF21
+    local_ip: 10.255.1.0/31 
+    peer_ip: 10.255.1.1/31
+    local_as: 12345
+    peer_as: 54321
+
+  - vlan_id: 2002
+    local_ip: 10.255.1.0/31 
+    peer_ip: 10.255.1.1/31
+    local_as: 12345
+    peer_as: 54321
+
+  - vlan_id: 2003
+    local_ip: 10.255.1.0/31 
+    peer_ip: 10.255.1.1/31
+    local_as: 12345
+    peer_as: 54321
+
+
+  - vlan_id: 2004
+    QOS:
+      code_point: "010011"
+      name: CUST-BT-AF22
+    local_ip: 10.255.1.0/31 
+    peer_ip: 10.255.1.1/31
+    local_as: 12345
+    peer_as: 54321
+    
+  - vlan_id: 2005
+    local_ip: 10.255.1.0/31 
+    peer_ip: 10.255.1.1/31
+    local_as: 12345
+    peer_as: 54321
+

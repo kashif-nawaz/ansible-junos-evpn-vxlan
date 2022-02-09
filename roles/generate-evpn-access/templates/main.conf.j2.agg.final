@@ -1,0 +1,33 @@
+{% if 'leaf' in group_names %}
+interfaces {
+{% for AE in overlay_if.aggrgate %}
+{% if 'leaf' in group_names and (inventory_hostname in AE.parent_devices) %}
+ {{AE.name}} {
+        esi {
+            {{AE.esi}};
+            all-active;
+        }
+        aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id {{AE.lacp_sys_id}};
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+               interface-mode trunk;
+                vlan {
+                    members [{% for VLAN in AE.vlan_member %}  {{ VLAN }} {% endfor %}];
+                }
+            }
+        }
+    }
+    {{AE.child_if}} {
+        gigether-options {
+            802.3ad {{AE.name}};
+        }
+    }
+{% endif %}
+{% endfor %}
+}
+{% endif %}

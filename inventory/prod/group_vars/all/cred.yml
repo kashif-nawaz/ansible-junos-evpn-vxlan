@@ -1,0 +1,6 @@
+credential:
+  host: "{{ mgmt_ip }}"
+  username: "{{ user }}"
+# password: "{{ password }}"
+  port: "{{ netconf_port }}"
+  ssh_keyfile: "{{ ssh_keyfile }}"

@@ -1,0 +1,13 @@
+---
+- name: move file to backup directory if it is present
+  vars:
+    file_path: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}"
+  shell: mv {{ item }}  {{file_path}}/backup/
+  with_fileglob:
+    - "{{file_path}}/tenant.*"
+- name: Building EVPN-VXLAN configuration for QFX / L3
+  vars:
+    filename: "{{ lookup('pipe', 'date +%Y-%m-%d-%H:%M:%S') }}"
+  template: >
+    src=main.conf.j2
+    dest=host_vars/{{site}}/{{inventory_hostname}}/tenant.{{filename}}.conf.part

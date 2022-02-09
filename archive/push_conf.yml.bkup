@@ -1,0 +1,24 @@
+---
+
+############################################################
+- name: Generate IP Fabric Configuration
+  hosts: all
+  connection: local
+  vars:
+     config_file_path: "{{ lookup('fileglob', '{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/main.*') }}"
+
+  roles:
+    - Juniper.junos
+############################################################
+  tasks:
+############################################################
+  - name: Deploy Configuration
+    juniper_junos_config:
+      load: 'replace'
+      provider: "{{ credential }}"
+      commit: false
+      check: true
+      src: "{{ config_file_path }}"
+      comment: "Pushed the configuration"
+    register: config_result
+    failed_when: config_result.failed == true

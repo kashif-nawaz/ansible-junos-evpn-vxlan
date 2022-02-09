@@ -1,0 +1,17 @@
+---
+- name: validate LACP Interfaces between leaf and compute
+  junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+        - show lacp interface "{{ item.name }}"
+      waitfor:
+        - "result[0]['rpc-reply']['lacp-interface-information-list']['lacp-interface-information']['lag-lacp-protocol']['lacp-mux-state'] eq 'Collecting distributing'"
+      retries: 3
+      interval: 3
+  register: response
+  with_items:
+  - "{{ evpn_if.aggrgate }}"
+  ignore_errors: True
+
+ 

@@ -1,0 +1,25 @@
+
+################################################################################
+###   Physical interfaces name                                           ###
+############################################################################
+topo:
+  spine-01:
+    port1: { name: xe-0/0/0,  peer: spine-02,  pport: port1, type: ebgp, link: 1, linkend: 1 }
+    port2: { name: xe-0/0/1,  peer: spine-02,  pport: port2, type: ebgp, link: 2, linkend: 1 }
+    port3: { name: xe-0/0/2,  peer: leaf-01,   pport: port1, type: ebgp, link: 3, linkend: 1 }
+    port4: { name: xe-0/0/3,  peer: leaf-02,   pport: port1, type: ebgp, link: 4, linkend: 1 }
+
+  spine-02:
+    port1: { name: xe-0/0/0,  peer: spine-01,  pport: port1, type: ebgp, link: 1, linkend: 2 }
+    port2: { name: xe-0/0/1,  peer: spine-01,  pport: port2, type: ebgp, link: 2, linkend: 2 }
+    port3: { name: xe-0/0/2,  peer: leaf-01,   pport: port2, type: ebgp, link: 5, linkend: 1 }
+    port4: { name: xe-0/0/3,  peer: leaf-02,   pport: port2, type: ebgp, link: 6, linkend: 1 }
+
+  leaf-01:
+    port1: { name: xe-0/0/0,  peer: spine-01,  pport: port3, type: ebgp, link: 3, linkend: 2 }
+    port2: { name: xe-0/0/1,  peer: spine-02,  pport: port3, type: ebgp, link: 5, linkend: 2 }
+
+  leaf-02:
+    port1: { name: xe-0/0/0,  peer: spine-01,  pport: port4, type: ebgp, link: 4, linkend: 2 }
+    port2: { name: xe-0/0/1,  peer: spine-02,  pport: port4, type: ebgp, link: 6, linkend: 2 }
+

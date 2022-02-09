@@ -1,0 +1,13 @@
+---
+    - name: Create output directory for each device
+      file:
+        path: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/cli"
+        state: directory
+
+    - name: run the junos show commands and save the output 
+      juniper_junos_command:
+        provider: "{{ credential }}"
+        commands: "{{ item }}"
+        dest: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/cli/'{{ item }}'.txt"
+      with_items: 
+        - "{{ cli }}"

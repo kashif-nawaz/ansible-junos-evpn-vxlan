@@ -1,0 +1,9 @@
+---
+- name: generate-assembled-configuration
+  hosts: leaf-01
+  vars:
+    filename: "{{ lookup('pipe', 'date +%Y-%m-%d-%H:%M:%S.conf') }}"
+  connection: local
+  gather_facts: false
+  roles:
+  - generate-assembled-configuration

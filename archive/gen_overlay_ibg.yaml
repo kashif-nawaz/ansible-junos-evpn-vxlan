@@ -1,0 +1,7 @@
+---
+- name: generate-overlay-ibgp
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+   - generate-overlay-ibgp

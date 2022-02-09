@@ -1,0 +1,10 @@
+
+p2p:
+{% for i in range(0, underlay_p2p.nbr_networks ) %}
+{% set network = underlay_p2p.network_pool | ipsubnet(underlay_p2p.network_size, i) %}
+{% if underlay_p2p.network_size == 31 %}
+  {{ i + 1 }}: { 1: {{ network | ipaddr('network') }},  2: {{ network| ipaddr(1) | ipaddr('address') }} }
+{% else %}
+  {{ i + 1 }}: { 1: {{ network | ipaddr(1) | ipaddr('address') }},  2: {{ network | ipaddr(2) | ipaddr('address') }} }
+{% endif %}
+{% endfor %}

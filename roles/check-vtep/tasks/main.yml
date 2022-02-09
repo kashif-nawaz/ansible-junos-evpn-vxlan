@@ -1,0 +1,21 @@
+---
+- name: getting overlay vars
+  include_vars:
+     file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-overlay.yaml"
+
+- name: validate vtep interfaces
+  junos_command:
+    provider: "{{ credential }}"
+    display: 'text'
+    commands:
+     - "show interfaces vtep"
+  register: "show_interfaces_vtep"
+
+- name: validate VTEP remote endpoints address
+  assert:
+     that:
+     - "'{{ item }}' in show_interfaces_vtep['stdout'][0]"
+  with_items: "{{ VTEP }}"
+  when: (item) is defined 
+  ignore_errors: True
+

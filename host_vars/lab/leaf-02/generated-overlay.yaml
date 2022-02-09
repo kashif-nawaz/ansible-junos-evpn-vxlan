@@ -1,0 +1,17 @@
+
+overlay:
+   loopback_ip: 172.1.1.6
+   bfd:
+     min_interval: 600
+     multiplier:   3
+     mode: automatic
+   overlay_asn: 65050
+   neighbors: 
+       - 172.1.1.2
+       - 172.1.1.1
+   
+VTEP:
+  - 172.1.1.5
+
+  - 172.1.1.2
+  - 172.1.1.1

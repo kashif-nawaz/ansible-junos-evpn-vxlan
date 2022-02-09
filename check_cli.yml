@@ -1,0 +1,18 @@
+---
+- name: collect cli on spines
+  hosts: all
+  connection: local
+  gather_facts: false
+  tasks:
+############################################################
+  - name: inclued Juniper junos
+    include_role:
+      name: Juniper.junos
+###########################################################
+  - name: collect cli
+    include_role:
+      name: collect-commands
+###########################################################
+  
+
+

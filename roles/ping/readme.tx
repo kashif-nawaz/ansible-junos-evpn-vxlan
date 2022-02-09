@@ -1,0 +1,11 @@
+This role be executed across all the hosts listed in $PWD/inventory/{{site}}/hosts.yml
+
+This role will verify if IP Fabric point to point interfaces can ping other end of the interface 
+
+Input file for this role are:-
+
+- {{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml
+
+One can adjust packet size and ping count in {{playbook_dir}}/roles/ping/main.yml
+
+Output will be displayed in the terminal from where playbook is executed 

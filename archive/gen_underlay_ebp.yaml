@@ -1,0 +1,7 @@
+---
+- name: generate-underlay-ebgp
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+  - generate-underlay-ebgp

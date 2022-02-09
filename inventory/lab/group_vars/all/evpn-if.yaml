@@ -1,0 +1,61 @@
+evpn_if:
+  aggrgate:
+   - name: ae0
+     desc: BMS3-AE
+     phy_if: 
+       - parent: leaf-01
+         IFD: xe-0/0/3
+         desc: BMS3-ETH1
+       - parent: leaf-02
+         IFD: xe-0/0/3
+         desc: BMS3-ETH2
+     esi: 00:01:11:12:27:00:00:00:00:01
+     lacp_sys_id: 00:01:11:12:27:01
+     mode: trunk
+     vlan_member:
+      - 300
+      - 301
+      - 302
+      - 1001
+     native_vlan: 
+
+   - name: ae1
+     desc: BMS-AE
+     phy_if: 
+       - parent: leaf-01
+         IFD: xe-0/0/4
+         desc: BMS4-ETH1
+       - parent: leaf-02
+         IFD: xe-0/0/4
+         desc: BMS3-ETH2
+     esi: 00:01:11:12:27:00:00:00:00:02
+     lacp_sys_id: 00:01:11:12:27:02
+     mode: trunk
+     vlan_member:
+      - 300
+      - 301
+      - 302
+      - 1001
+     native_vlan: 
+
+  single:
+   - name: xe-0/0/2
+     desc: BSM1-ETH1
+     parent_devices:
+       - leaf-01
+     mode: trunk
+     vlan_member:
+      - 1002
+     native_vlan:  
+
+   - name: xe-0/0/2
+     desc: BMS2-ETH1
+     parent_devices:
+       - leaf-02
+     mode: trunk
+     vlan_member:
+      - 1003
+     native_vlan:  
+
+
+

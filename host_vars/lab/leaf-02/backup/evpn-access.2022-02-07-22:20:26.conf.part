@@ -1,0 +1,88 @@
+
+
+chassis  {
+    aggregated-devices {
+        ethernet {
+            device-count 2;
+        }
+    }
+}
+
+interfaces {
+ ae0 {
+      description "BMS3-AE";
+      apply-groups GR-EDGE-INTF;
+       esi {
+            00:01:11:12:27:00:00:00:00:01;
+            all-active;
+        }
+      aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id 00:01:11:12:27:01;
+            }
+        }
+       unit 0 {
+            family ethernet-switching {
+               interface-mode trunk;
+                vlan {
+                    members [  300   301   302   1001 ];
+                }
+            }
+        }
+    }
+    replace: 
+    xe-0/0/3 {
+        description "BMS3-ETH2";
+        hold-time up 6000 down 0;
+        ether-options {
+            802.3ad ae0;
+        }
+    }
+
+ ae1 {
+      description "BMS-AE";
+      apply-groups GR-EDGE-INTF;
+       esi {
+            00:01:11:12:27:00:00:00:00:02;
+            all-active;
+        }
+      aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id 00:01:11:12:27:02;
+            }
+        }
+       unit 0 {
+            family ethernet-switching {
+               interface-mode trunk;
+                vlan {
+                    members [  300   301   302   1001 ];
+                }
+            }
+        }
+    }
+    replace: 
+    xe-0/0/4 {
+        description "BMS3-ETH2";
+        hold-time up 6000 down 0;
+        ether-options {
+            802.3ad ae1;
+        }
+    }
+
+
+    replace:
+    xe-0/0/2 {
+      description "BMS2-ETH1";
+      apply-groups GR-EDGE-INTF;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [  1003 ];
+                }
+            }
+        }
+    }
+}

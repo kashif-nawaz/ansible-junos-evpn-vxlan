@@ -1,0 +1,32 @@
+INFRA_NW:
+ - vlan_name: vrouter_transport
+   vni: 300
+   rt: target:65050:300
+   MODE: ERB
+   RE_DISTI_Underlay: True
+   L3_if: 
+      anycast_gw: 192.168.254.1/24
+
+ - vlan_name: storage_access
+   vni: 301
+   rt: target:65050:301
+   MODE: ERB
+
+ - vlan_name: storage_replication
+   vni: 302
+   rt: target:65050:302
+   MODE: ERB
+
+ - vlan_name: sriov_1001
+   vni: 1001
+   rt: target:65050:1001
+   MODE: CRB
+
+ - vlan_name: sriov_1002
+   vni: 1002
+   rt: target:65050:1002
+   MODE: CRB
+
+
+
+

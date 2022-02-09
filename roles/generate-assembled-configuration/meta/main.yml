@@ -1,0 +1,7 @@
+
+galaxy_info:
+  author: Dheeraj Chellaramani
+  company: Juniper Networks
+  min_ansible_version: 1.9
+  categories:
+   - networking

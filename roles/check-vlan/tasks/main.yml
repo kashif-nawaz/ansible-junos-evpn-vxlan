@@ -1,0 +1,20 @@
+---
+- name: getting underlay-ebgp vars
+  include_vars:
+     file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-tenant-vars.yaml"
+
+- name: validate vlan
+  junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+       - "show vlans {{ item.vlan_name }}"
+      waitfor:
+       - "result[0]['rpc-reply']['l2ng-l2ald-vlan-instance-information']['l2ng-l2ald-vlan-instance-group']['l2ng-l2rtb-vlan-name'] eq {{ item.vlan_name }}"
+  register: response
+  with_items: "{{ INFRA_NW}}"
+  ignore_errors: True
+ 
+- name: print
+  debug:
+    var: response.msg

@@ -1,0 +1,11 @@
+{% if 'leaf' in group_names %}
+{% for AE in overlay_if.aggrgate %}
+{% for HOST in AE.parent_devices %}
+{% for host in groups['leaf'] %}
+{% if host==HOST %}
+      - {{AE.name}}
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}

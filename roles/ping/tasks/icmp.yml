@@ -1,0 +1,28 @@
+---
+
+- name: Examples of juniper_junos_ping
+  hosts: all
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+
+  tasks:
+  - name: get vars
+    include_vars:
+       file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+  - name: Ping 
+    juniper_junos_ping:
+       provider: "{{ credential }}"
+       dest: "{{item.peer_ip}}"
+       source: "{{item.local_ip}}"
+       size: 1472
+       count: 2
+    register: response
+    with_items:
+    - "{{ underlay.neighbors }}"
+    ignore_errors: True
+  - name: print
+    debug:
+        var: response.results

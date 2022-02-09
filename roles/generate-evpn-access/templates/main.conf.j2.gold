@@ -1,0 +1,14 @@
+{% if 'leaf' in group_names %}
+overlay_leaf:
+{% for AE in overlay_if.aggrgate %}
+   {{AE.name}}
+{% for HOST in AE.parent_devices %}
+  - {{HOST}} HOST in outerloop
+{% for host in groups['leaf'] %}
+{% if host is in HOST %}
+      - {{host}} host in inner loop
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}

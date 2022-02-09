@@ -1,0 +1,26 @@
+---
+- name: validate icmp reachability between fabric interfaces 
+  hosts: all
+  connection: local
+  gather_facts: false
+  tasks:
+############################################################
+  - name: inclued Juniper junos
+    include_role:
+      name: Juniper.junos
+############################################################
+  - name: getting underlay-ebgp vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+  - name: getting overlay vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-overlay.yaml"
+
+  - name: getting tenant vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-tenant-vars.yaml"
+############################################################
+  - name: check ip reachability between underlay interfaces
+    include_role:
+      name: ping

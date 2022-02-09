@@ -1,0 +1,7 @@
+---
+- name: check bgp
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+  - check-bgp

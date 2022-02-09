@@ -1,0 +1,45 @@
+---
+- name: getting underlay-ebgp vars
+  include_vars:
+     file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+- name: validate IP Fabirc Interfaces Admin Status
+  junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+       - "show interfaces terse {{ item.interface }}"
+      waitfor:
+       - "result[0]['rpc-reply']['interface-information']['physical-interface']['admin-status'] eq up"
+      retries: 3
+      interval: 3
+  register: response
+  with_items:
+  - "{{ underlay.neighbors }}"
+  when: (item is defined) 
+  ignore_errors: True
+  
+- name: print
+  debug:
+    var: response.msg
+
+- name: validate IP Fabirc Interfaces operational Status
+  junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+       - "show interfaces terse {{ item.interface }}"
+      waitfor:
+      - "result[0]['rpc-reply']['interface-information']['physical-interface']['oper-status'] eq up"
+      retries: 3
+      interval: 3
+  register: response
+  with_items:
+  - "{{ underlay.neighbors }}"
+  when: (item is defined) 
+  ignore_errors: True
+  
+- name: print
+  debug:
+    var: response.msg
+

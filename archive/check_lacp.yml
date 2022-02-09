@@ -1,0 +1,7 @@
+---
+- name: check lldp
+  hosts: leaf
+  connection: local
+  gather_facts: false
+  roles:
+  - check-lacp

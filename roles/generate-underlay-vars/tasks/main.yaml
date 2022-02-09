@@ -1,0 +1,13 @@
+---
+- name: getting  vars
+  include_vars:
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/underlay-topology.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/generated_p2p_ips.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/network.yaml"
+
+
+- name: Generate Underlay YAML
+  template: >
+    src=main.conf.j2
+    dest=host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml
+  tags: [ "generate-underlay-bgp" ]

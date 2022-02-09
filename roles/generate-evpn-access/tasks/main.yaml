@@ -1,0 +1,22 @@
+---
+- name: getting  vars
+  include_vars:
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/underlay-topology.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/generated_p2p_ips.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/network.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/tenants.yaml"
+    file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/evpn-if.yaml"
+
+- name: move file to backup directory if it is present
+  vars:
+    file_path: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}"
+  shell: mv {{ item }}  {{file_path}}/backup/
+  with_fileglob:
+    - "{{file_path}}/evpn-access.*"
+- name: Generate Underlay YAML
+  vars:
+    filename: "{{ lookup('pipe', 'date +%Y-%m-%d-%H:%M:%S') }}"
+  template: >
+    src=main.conf.j2
+    dest=host_vars/{{site}}/{{inventory_hostname}}/evpn-access.{{filename}}.conf.part
+  tags: [ "generate-evpn-access" ]

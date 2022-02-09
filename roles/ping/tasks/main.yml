@@ -1,0 +1,17 @@
+---
+- name: check icmp
+  juniper_junos_ping:
+     provider: "{{ credential }}"
+     dest: "{{item.peer_ip}}"
+     source: "{{item.local_ip}}"
+     size: 1472
+     count: 2
+  register: response
+  with_items:
+  - "{{ underlay.neighbors }}"
+  ignore_errors: True
+
+
+- name: print
+  debug:
+    var: response.msg

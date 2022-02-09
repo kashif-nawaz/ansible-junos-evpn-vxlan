@@ -1,0 +1,47 @@
+---
+  - name: getting overlay-vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-overlay.yaml"
+
+  - name: validate Inter Spine MP-iBGP
+    junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+       - show bgp neighbor {{ item }}
+      waitfor:
+       - "result[0]['rpc-reply']['bgp-information']['bgp-peer']['peer-state'] eq 'Established'"
+      retries: 3
+      interval: 3
+    register: response
+    with_items:
+    - "{{ overlay.rr_gp }}"
+    when: (item is defined) 
+    ignore_errors: True
+
+  - name: print
+    debug:
+      var: response.msg
+
+
+  - name: validate Spine to Contrail-Controllers MP-iBGP peers
+    junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+       - show bgp neighbor {{ item.IP }}
+      waitfor:
+       - "result[0]['rpc-reply']['bgp-information']['bgp-peer']['peer-state'] eq 'Established'"
+      retries: 3
+      interval: 3
+    register: response
+    with_items:
+    - "{{ CONTRAIL_CONTROLLERS }}"
+    when: (item is defined) 
+    ignore_errors: True
+
+  - name: print
+    debug:
+      var: response.msg
+
+

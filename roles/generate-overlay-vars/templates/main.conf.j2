@@ -1,0 +1,64 @@
+
+overlay:
+{% if 'leaf' in group_names %}
+   loopback_ip: {{loopbacks.split('.')[0:3] | join('.')}}.{{id}}
+   bfd:
+     min_interval: {{overlay_bfd.min_interval}}
+     multiplier:   {{overlay_bfd.multiplier}}
+     mode: {{overlay_bfd.mode}}
+   overlay_asn: {{overlay_as}}
+   neighbors: 
+   {% for host in groups['spine'] %}
+    - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+   {% endfor %}
+
+VTEP:
+{% for host in groups['leaf'] %}
+{% if 'leaf' in group_names and (inventory_hostname not in host) %}
+  - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endif %}
+{% endfor %}
+
+{% for host in groups['spine'] %}
+  - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endfor %}
+{% else %}
+   loopback_ip: {{loopbacks.split('.')[0:3] | join('.')}}.{{id}}
+   bfd:
+     min_interval: {{overlay_bfd.min_interval}}
+     multiplier:   {{overlay_bfd.multiplier}}
+     mode: {{overlay_bfd.mode}}
+   overlay_asn: {{overlay_as}}
+   neighbors:
+{% for host in groups['leaf'] %}
+    - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endfor %}
+
+   cluster_id: {{cluster_id}}
+
+   rr_gp:
+{% for host in groups['spine'] %}
+{% if 'spine' in group_names and (inventory_hostname not in host) %}
+     - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endif %}
+{% endfor %}
+
+CONTRAIL_CLUSTER_ID: {{contrail_clustr_id}}
+VROUTERS: {{vrouter_subnet}}
+CONTRAIL_CONTROLLERS:
+{% for con in contrail_controllers %}
+  - DESCRIPTION: {{con.desc}}
+    IP:  {{con.ip}}
+{% endfor %}
+  
+VTEP:
+{% for host in groups['spine'] %}
+{% if 'spine' in group_names and (inventory_hostname not in host) %}
+  - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endif %}
+{% endfor %}
+{% for host in groups['leaf'] %}
+  - {{loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+{% endfor %}
+
+{% endif %}

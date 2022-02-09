@@ -1,0 +1,79 @@
+---
+- name: validate ip fabric
+  hosts: all
+  connection: local
+  gather_facts: false
+  tasks:
+############################################################
+  - name: inclued Juniper junos
+    include_role:
+      name: Juniper.junos
+############################################################
+  - name: getting underlay-ebgp vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+  - name: getting overlay vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-overlay.yaml"
+
+  - name: getting tenant vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-tenant-vars.yaml"
+############################################################
+  - name: check IP Fabric Interfaces Admin Status
+    include_role:
+      name: check-underlay-if
+    when: rolename is not defined
+############################################################
+  - name: check ip reachability between underlay interfaces
+    include_role:
+      name: ping
+############################################################
+  - name: check lldp for underlay interfaces
+    include_role:
+      name: check-lldp
+############################################################
+  - name: check  IP Fabric ebgp
+    include_role:
+      name: check-ebgp
+############################################################
+  - name: check  IP Fabric  MP-iBGP
+    include_role:
+      name: check-ibgp
+############################################################
+  - name: check vtep interfaces
+    include_role:
+      name: check-vtep
+############################################################
+  - name: check tenants vlans
+    include_role:
+      name: check-vlan
+###########################################################
+- name: check leaf to compute LACP Interfaces 
+  hosts: leaf
+  connection: local
+  gather_facts: false
+  roles:
+  - check-lacp
+###########################################################
+- name: check spine-spine, spine-contrail MP-iBPG
+  hosts: spine
+  connection: local
+  gather_facts: false
+  roles:
+  - check-spine-ibgp
+###########################################################
+- name: collect cli
+  hosts: all
+  connection: local
+  gather_facts: false
+  tasks:
+  - name: inclued Juniper junos
+    include_role:
+      name: Juniper.junos
+  - name: collect cli
+    include_role:
+      name: collect-commands
+###########################################################
+

@@ -1,0 +1,7 @@
+{% if 'leaf' in group_names %}
+{% for AE in overlay_if.aggrgate %}
+{% if 'leaf' in group_names and (inventory_hostname in AE.parent_devices) %}
+      - {{AE.name}}
+{% endif %}
+{% endfor %}
+{% endif %}

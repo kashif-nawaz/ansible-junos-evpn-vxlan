@@ -1,0 +1,30 @@
+
+overlay:
+   loopback_ip: 172.1.1.2
+   bfd:
+     min_interval: 600
+     multiplier:   3
+     mode: automatic
+   overlay_asn: 65050
+   neighbors:
+    - 172.1.1.6
+    - 172.1.1.5
+
+   cluster_id: 1.1.1.1
+
+   rr_gp:
+     - 172.1.1.1
+
+CONTRAIL_CLUSTER_ID: 1.1.1.2
+VROUTERS: 192.168.254.0/24
+CONTRAIL_CONTROLLERS:
+  - DESCRIPTION: Contrail-Controller
+    IP:  192.168.254.12
+  - DESCRIPTION: Contrail-Controller
+    IP:  192.168.254.13
+  
+VTEP:
+  - 172.1.1.1
+  - 172.1.1.6
+  - 172.1.1.5
+

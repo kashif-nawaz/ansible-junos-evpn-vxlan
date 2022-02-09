@@ -1,0 +1,11 @@
+---
+- name: move file to backup directory if it is present
+  vars:
+    file_path: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}"
+  shell: mv {{ item }}  {{file_path}}/backup/
+  with_fileglob:
+    - "{{file_path}}/main.*"
+- name: Assembling configurations and copying to conf
+  vars:
+    filename: "{{ lookup('pipe', 'date +%Y-%m-%d-%H:%M:%S') }}"
+  assemble: src=host_vars/{{site}}/{{inventory_hostname}} dest=host_vars/{{site}}/{{inventory_hostname}}/main.{{inventory_hostname}}-config-{{filename}}.conf regexp=.+\.part

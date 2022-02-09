@@ -1,0 +1,75 @@
+{% if 'leaf' in group_names %}
+
+{% for AE in evpn_if.aggrgate %}
+{% set i = loop.index %}
+{% set AECOUNT= loop.length %}
+{% if i <= 1 %}
+chassis {
+    aggregated-devices {
+        ethernet {
+            device-count {{AECOUNT}};
+        }
+    }
+}
+
+{% endif %}
+{% endfor %}
+
+interfaces {
+{% for AE in evpn_if.aggrgate %}
+{% if 'leaf' in group_names and (inventory_hostname in AE.parent_devices) %}
+ {{AE.name}} {
+   apply-groups GR-EDGE-INTF;
+{% if AE.native_vlan is defined and AE.native_vlan!=None %}
+    native-vlan-id {{AE.native_vlan}};
+{% endif %}
+        esi {
+            {{AE.esi}};
+            all-active;
+        }
+        aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id {{AE.lacp_sys_id}};
+            }
+        }
+        unit 0 {
+            family ethernet-switching {
+               interface-mode {{AE.mode}};
+                vlan {
+                    members [{% for VLAN in AE.vlan_member %}  {{ VLAN }} {% endfor %}];
+                }
+            }
+        }
+    }
+replace:
+    {{AE.child_if}} {
+        hold-time up 6000 down 0;
+        ether-options {
+            802.3ad {{AE.name}};
+        }
+    }
+{% endif %}
+{% endfor %}
+
+{% for IF in evpn_if.single %}
+{% if 'leaf' in group_names and (inventory_hostname in IF.parent_devices) %}
+replace:
+    {{IF.name}} {
+    apply-groups GR-EDGE-INTF;
+{% if IF.native_vlan is defined and IF.native_vlan!=None %}
+    native-vlan-id {{IF.native_vlan}};
+{% endif %}
+        unit 0 {
+            family ethernet-switching {
+                interface-mode {{IF.mode}};
+                vlan {
+                    members [{% for VLAN in IF.vlan_member %}  {{ VLAN }} {% endfor %}];
+                }
+            }
+        }
+    }
+{% endif %}
+{% endfor %}
+}
+{% endif %}

@@ -1,0 +1,27 @@
+mtu_phy_int: 9192   # MTU of physical interfaces
+mtu_logical_int: 9000   # MTU of logical interfaces
+underlay_bfd:                # Configuration for BFD
+  min_interval: 500    
+  multiplier:   3 
+  mode: automatic 
+
+overlay_as: 65050
+cluster_id: 1.1.1.1
+loopbacks: 172.1.1.0/24
+
+
+overlay_bfd:
+      min_interval: 600
+      multiplier:   3
+      mode: automatic 
+
+advertize_local_only: true
+crb_global_rt: 10001           
+
+contrail_clustr_id: 1.1.1.2
+vrouter_subnet: 192.168.254.0/24
+contrail_controllers:
+  - ip: 192.168.254.12
+    desc: Contrail-Controller
+
+

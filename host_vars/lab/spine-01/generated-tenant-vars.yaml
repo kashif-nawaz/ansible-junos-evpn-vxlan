@@ -1,0 +1,100 @@
+INFRA_NW: 
+
+
+
+ - vlan_name: sriov_1001
+   vni: 1001
+   rt: target:65050:1001
+   MODE: CRB
+   vrf: vrf_sriov_1001
+   LEAK_TO_VRF:
+     - sriov_1002
+     - sriov_1003
+     - nc_commm_test
+     - nc_commm_mgmt
+   L3_if:
+      anycast_gw: 192.168.111.1
+      IRB_IP:  192.168.111.3/24
+   NORTH_IF:
+     VLAN: 2001
+     PHY_IF: xe-0/0/0  
+     IP: 10.255.1.0/31
+     NBR: 10.255.1.1
+     LoCAL_AS: 12345
+     PEER_AS: 54321
+     QOS_REWRITE:
+        RULE_NAME: CUST-BT-AF21
+        CODE_POINT: "010010"
+ 
+ 
+ 
+ 
+ 
+
+ - vlan_name: sriov_1002
+   vni: 1002
+   rt: target:65050:1002
+   MODE: CRB
+   vrf: vrf_sriov_1002
+   LEAK_TO_VRF:
+     - sriov_1001
+   L3_if:
+      anycast_gw: 192.168.112.1
+      IRB_IP:  192.168.112.3/24
+   NORTH_IF:
+     VLAN: 2002
+     PHY_IF: xe-0/0/0  
+ 
+     IP: 10.255.1.0/31
+     NBR: 10.255.1.1
+     LoCAL_AS: 12345
+     PEER_AS: 54321
+ 
+ 
+ 
+ 
+
+
+
+OVERLAY_NW:
+ - VRF: nc_commm_test
+   subnet: 192.168.200.0/24
+   RT: 2004
+   LEAK_TO_VRF:
+     - sriov_1001
+   NORTH_IF:
+     VLAN: 2004
+     PHY_IF: xe-0/0/0  
+ 
+ 
+ 
+     IP: 10.255.1.0/31
+     NBR: 10.255.1.1
+     LoCAL_AS: 12345
+     PEER_AS: 54321
+     QOS_REWRITE:
+        RULE_NAME: CUST-BT-AF22
+        CODE_POINT: "010011"
+ 
+ 
+
+ - VRF: nc_commm_mgmt
+   subnet: 192.168.201.0/24
+   RT: 2005
+   LEAK_TO_VRF:
+     - sriov_1001
+   NORTH_IF:
+     VLAN: 2005
+     PHY_IF: xe-0/0/0  
+ 
+ 
+ 
+ 
+     IP: 10.255.1.0/31
+     NBR: 10.255.1.1
+     LoCAL_AS: 12345
+     PEER_AS: 54321
+ 
+
+
+

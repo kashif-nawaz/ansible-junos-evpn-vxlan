@@ -1,0 +1,33 @@
+
+overlay:
+{% if 'leaf' in group_names %}
+   loopback_ip: {{networks.loopbacks.split('.')[0:3] | join('.')}}.{{id}}
+   bfd:
+     min_interval: {{bfd.min_interval}}
+     multiplier:   {{bfd.multiplier}}
+     mode: {{bfd.mode}}
+   overlay_asn: {{overlay_as}}
+   neighbors: 
+   {% for host in groups['spine'] %}
+    - {{networks.loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+   {% endfor %}
+{% else %}
+   loopback_ip: {{networks.loopbacks.split('.')[0:3] | join('.')}}.{{id}}
+   bfd:
+     min_interval: {{bfd.min_interval}}
+     multiplier:   {{bfd.multiplier}}
+     mode: {{bfd.mode}}
+   overlay_asn: {{overlay_as}}
+   neighbors:
+   {% for host in groups['leaf'] %}
+    - {{networks.loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+   {% endfor %}
+
+   cluster_id: {{cluster_id}}
+   rr_gp:
+   {% for host in groups['spine'] %}
+   - {{networks.loopbacks.split('.')[0:3] | join('.')}}.{{hostvars[host].id}}
+   {% endfor %}
+
+
+{% endif %}

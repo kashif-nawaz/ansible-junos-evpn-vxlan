@@ -1,0 +1,7 @@
+---
+- name: check underlay if
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+  - check-underlay-if

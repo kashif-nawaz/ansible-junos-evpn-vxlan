@@ -1,0 +1,8 @@
+---
+
+- name: Generate P2P IPs
+  template: >
+    src=main.conf.j2
+    dest=$PWD/inventory/{{site}}/group_vars/all/generated_p2p_ips.yaml
+  tags: [ "p2pip" ]
+  #run_once: true

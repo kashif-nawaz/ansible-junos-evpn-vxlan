@@ -1,0 +1,239 @@
+{% if 'leaf' in group_names %}
+INFRA_NW:
+{% for nw in infra_nw %}
+{% for p in nw.parent %}
+{% if p == 'leaf' %}
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vni}}
+   rt: target:{{overlay_as}}:{{nw.vni}}
+   MODE: {{nw.MODE}}
+{% if nw.MODE=='ERB' and nw.L3_if is sameas true %}
+   RE_DISTI_Underlay: {{nw.RE_DIST_Underlay}}
+{% if nw.VRF is sameas true %}
+   vrf: vrf_{{nw.name}}
+{% endif %}
+   L3_if: 
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% elif inventory_hostname== p %}
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vni}}
+   rt: target:{{overlay_as}}:{{nw.vni}}
+   MODE: {{nw.MODE}}
+{% if nw.MODE=='ERB' and nw.L3_if is sameas true %}
+   RE_DISTI_Underlay: {{nw.RE_DIST_Underlay}}
+{% if nw.VRF is sameas true %}
+   vrf: vrf_{{nw.name}}
+{% endif %}
+   L3_if: 
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% endif %}
+{% endfor %}
+
+{% endfor %}
+
+
+{% elif  'spine' in group_names %}
+INFRA_NW: 
+{% for nw in infra_nw %}
+{% for p in nw.parent %}
+{% if p == 'spine' %}
+{% if nw.MODE=='CRB' %}
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vni}}
+   rt: target:{{overlay_as}}:{{nw.vni}}
+   MODE: {{nw.MODE}}
+{% if nw.VRF is sameas true %}
+   vrf: vrf_{{nw.name}}
+{% if nw.VRF_Route_Leak is defined and nw.VRF_Route_Leak[0] !=None %}
+   LEAK_TO_VRF:
+{% for  VRF in nw.VRF_Route_Leak %}
+     - {{VRF}}
+{% endfor %}
+{% endif %}
+{% endif %}
+{%if nw.L3_if is sameas true %}
+   L3_if:
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}
+{% for host in groups['spine'] %}
+{% set i = loop.index+1 %}
+{% if 'spine' in group_names and (inventory_hostname  in host) %}
+      IRB_IP:  {{nw.subnet.split('.')[0:3] | join('.')}}.{{i}}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if nw.north_if is defined and nw.north_if[0].vlan_id !=None %}
+   NORTH_IF:
+{% for INTF in nw.north_if %}
+     VLAN: {{INTF.vlan_id}}
+     PHY_IF: {% for IF in INTF.phy_if %}{% if IF.parent==inventory_hostname %}{{IF.IFD}} {% endif %}{% endfor %}
+{% for IFD in north_if %} 
+{% if INTF.vlan_id == IFD.vlan_id %}
+{% if IFD.phy_if is defined %}{% for PARENT in IFD.phy_if %}{% if PARENT.parent==inventory_hostname %}
+     IP: {{PARENT.local_ip}}
+     NBR: {{PARENT.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{PARENT.local_as}}
+     PEER_AS: {{PARENT.peer_as}}
+{% endif %}{% endfor %}
+{% else %}
+     IP: {{IFD.local_ip}}
+     NBR: {{IFD.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{IFD.local_as}}
+     PEER_AS: {{IFD.peer_as}}
+{% endif %}
+{% if IFD.QOS is defined and IFD.QOS.code_point !=None %}
+     QOS_REWRITE:
+        RULE_NAME: {{IFD.QOS.name}}
+        CODE_POINT: "{{IFD.QOS.code_point}}"
+{% endif %}
+{% endif %}
+{% endfor %} 
+{% endfor %}
+{% endif %}
+{% endif %}
+{% elif inventory_hostname== p %}
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vni}}
+   rt: target:{{overlay_as}}:{{nw.vni}}
+   MODE: {{nw.MODE}}
+{% if nw.VRF is sameas true %}
+   vrf: vrf_{{nw.name}}
+{% if nw.VRF_Route_Leak is defined and nw.VRF_Route_Leak[0] != None %}
+   LEAK_TO_VRF:
+{% for  VRF in nw.VRF_Route_Leak %}
+     - {{VRF}}
+{% endfor %}
+{% endif %}
+{% endif %}
+{%if nw.L3_if is sameas true %}
+   L3_if:
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}
+{% for host in groups['spine'] %}
+{% set i = loop.index+1 %}
+{% if 'spine' in group_names and (inventory_hostname  in host) %}
+      IRB_IP:  {{nw.subnet.split('.')[0:3] | join('.')}}.{{i}}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if nw.north_if is defined and nw.north_if[0].vlan_id !=None %}
+   NORTH_IF:
+{% for INTF in nw.north_if %}
+     VLAN: {{INTF.vlan_id}}
+     PHY_IF: {% for IF in INTF.phy_if %}{% if IF.parent==inventory_hostname %}{{IF.IFD}} {% endif %}{% endfor %}
+{% for IFD in north_if %} 
+{% if INTF.vlan_id == IFD.vlan_id %}
+{% if IFD.phy_if is defined %}{% for PARENT in IFD.phy_if %}{% if PARENT.parent==inventory_hostname %}
+     IP: {{PARENT.local_ip}}
+     NBR: {{PARENT.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{PARENT.local_as}}
+     PEER_AS: {{PARENT.peer_as}}
+{% endif %}{% endfor %}
+{% else %}
+     IP: {{IFD.local_ip}}
+     NBR: {{IFD.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{IFD.local_as}}
+     PEER_AS: {{IFD.peer_as}}
+{% endif %}
+{% if IFD.QOS is defined and IFD.QOS.code_point !=None %}
+     QOS_REWRITE:
+        RULE_NAME: {{IFD.QOS.name}}
+        CODE_POINT: "{{IFD.QOS.code_point}}"
+{% endif %}
+{% endif %}
+{% endfor %} 
+{% endfor %}
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+{% endfor %}
+
+OVERLAY_NW:
+{% for NW in overlay_nw %}
+{% for p in NW.parent %}
+{% if p == 'spine' %}
+ - VRF: {{NW.name}}
+   subnet: {{NW.subnet}}
+   RT: {{NW.rt}}
+{% if NW.VRF_Route_Leak is defined and NW.VRF_Route_Leak[0] !=None %}
+   LEAK_TO_VRF:
+{% for  VRF in NW.VRF_Route_Leak %}
+     - {{VRF}}
+{% endfor %}
+{% endif %}
+{% if NW.north_if is defined and NW.north_if[0].vlan_id !=None %}
+   NORTH_IF:
+{% for INTF in NW.north_if %}
+     VLAN: {{INTF.vlan_id}}
+     PHY_IF: {% for IF in INTF.phy_if %}{% if IF.parent==inventory_hostname %}{{IF.IFD}} {% endif %}{% endfor %}
+{% for IFD in north_if %} 
+{% if INTF.vlan_id == IFD.vlan_id %}
+{% if IFD.phy_if is defined %}{% for PARENT in IFD.phy_if %}{% if PARENT.parent==inventory_hostname %}
+     IP: {{PARENT.local_ip}}
+     NBR: {{PARENT.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{PARENT.local_as}}
+     PEER_AS: {{PARENT.peer_as}}
+{% endif %}{% endfor %}
+{% else %}
+     IP: {{IFD.local_ip}}
+     NBR: {{IFD.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{IFD.local_as}}
+     PEER_AS: {{IFD.peer_as}}
+{% endif %}
+{% if IFD.QOS is defined and IFD.QOS.code_point !=None %}
+     QOS_REWRITE:
+        RULE_NAME: {{IFD.QOS.name}}
+        CODE_POINT: "{{IFD.QOS.code_point}}"
+{% endif %}
+{% endif %}
+{% endfor %} 
+{% endfor %}
+{% endif %}
+
+{% elif inventory_hostname== p %}
+ - VRF: {{NW.name}}
+   subnet: {{NW.subnet}}
+   RT: {{NW.rt}}
+{% if NW.VRF_Route_Leak is defined and NW.VRF_Route_Leak[0] !=None %}
+   LEAK_TO_VRF:
+{% for  VRF in NW.VRF_Route_Leak %}
+     - {{VRF}}
+{% endfor %}
+{% endif %}
+{% if NW.north_if is defined and NW.north_if[0].vlan_id !=None %}
+   NORTH_IF:
+{% for INTF in NW.north_if %}
+     VLAN: {{INTF.vlan_id}}
+     PHY_IF: {% for IF in INTF.phy_if %}{% if IF.parent==inventory_hostname %}{{IF.IFD}} {% endif %}{% endfor %}
+{% for IFD in north_if %} 
+{% if INTF.vlan_id == IFD.vlan_id %}
+{% if IFD.phy_if is defined %}{% for PARENT in IFD.phy_if %}{% if PARENT.parent==inventory_hostname %}
+     IP: {{PARENT.local_ip}}
+     NBR: {{PARENT.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{PARENT.local_as}}
+     PEER_AS: {{PARENT.peer_as}}
+{% endif %}{% endfor %}
+{% else %}
+     IP: {{IFD.local_ip}}
+     NBR: {{IFD.peer_ip | ipaddr('address')}}
+     LoCAL_AS: {{IFD.local_as}}
+     PEER_AS: {{IFD.peer_as}}
+{% endif %}
+{% if IFD.QOS is defined and IFD.QOS.code_point !=None %}
+     QOS_REWRITE:
+        RULE_NAME: {{IFD.QOS.name}}
+        CODE_POINT: "{{IFD.QOS.code_point}}"    
+{% endif %}
+{% endif %}
+{% endfor %} 
+{% endfor %}
+{% endif %}
+
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+
+{% endif %}

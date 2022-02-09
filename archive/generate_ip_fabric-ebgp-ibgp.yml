@@ -1,0 +1,103 @@
+---
+
+############################################################
+- name: Generate IP Fabric Configuration
+  hosts: all
+  connection: local
+############################################################
+  tasks:
+############################################################
+  - name: check if the host directory is present
+    stat:
+      path: host_vars/{{site}}/{{inventory_hostname}}/
+    register: hostdir_present
+
+  - name: create a host directory if its not present
+    command: mkdir host_vars/{{site}}/{{inventory_hostname}}
+    args:
+      creates: /host_vars/{{site}}/{{inventory_hostname}}
+    when: hostdir_present.stat.exists == False
+
+############################################################
+  - name: check if the backup directory is present
+    stat:
+      path: host_vars/{{site}}/{{inventory_hostname}}/backup/
+    register: dir_present
+
+  - name: create a backup directory if its not present
+    command: mkdir host_vars/{{site}}/{{inventory_hostname}}/backup
+    args:
+      creates: /host_vars/{{site}}/{{inventory_hostname}}/backup
+    when: dir_present.stat.exists == False
+
+############################################################
+  - name: generate P2P IPs
+    include_role:
+      name: generate-p2p-ips
+    when: rolename is not defined
+############################################################
+  - name: getting  generated_p2p_ips
+    include_vars:
+      file: "{{playbook_dir}}/inventory/{{site}}/group_vars/all/generated_p2p_ips.yaml"
+
+############################################################
+  - name: generate underlay ebgp vars
+    include_role:
+      name: generate-underlay-vars
+    when: rolename is not defined
+
+
+############################################################
+  - name: generate overlay vars
+    include_role:
+      name: generate-overlay-vars
+    when: rolename is not defined
+
+############################################################
+  - name: generate tenant vars
+    include_role:
+      name: generate-tenant-vars
+    when: rolename is not defined
+
+############################################################
+
+  - name: getting underlay-ebgp vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+  - name: getting overlay vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-overlay.yaml"
+
+  - name: getting tenant vars
+    include_vars:
+      file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-tenant-vars.yaml"
+
+############################################################
+  - name: generate underlay ebgp config  
+    include_role:
+      name: generate-underlay-ebgp
+    when: rolename is not defined
+
+############################################################
+  - name: generate overlay mp-ibgp config  
+    include_role:
+      name: generate-overlay-ibgp
+    when: rolename is not defined
+
+############################################################
+  - name: generate tenant config
+    include_role:
+      name: generate-tenant-config
+    when: rolename is not defined
+
+############################################################
+  - name: Executing a Specific Role
+    include_role:
+      name: "{{ rolename }}"
+    when: rolename is defined
+
+############################################################
+  - name: generate main configuration
+    include_role:
+      name: generate-assembled-configuration

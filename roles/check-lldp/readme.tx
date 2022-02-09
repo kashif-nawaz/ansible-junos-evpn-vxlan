@@ -1,0 +1,9 @@
+This role be executed across all the hosts listed in $PWD/inventory/{{site}}/hosts.yml
+
+This role will check if LLDP neighbors are up as per expectation
+
+Input file for  this role is:-
+
+- $PWD/inventory/{{site}}/group_vars/all/underlay-topology.yaml
+
+Output for this role will be displayed in the terminal  from playbook is executed 

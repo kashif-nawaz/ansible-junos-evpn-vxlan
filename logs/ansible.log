@@ -1,0 +1,1629 @@
+2022-02-06 10:52:00,874 p=41 u=root |  ERROR! Missing target hosts
+2022-02-06 10:52:47,279 p=46 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: spines
+
+2022-02-06 10:52:47,280 p=46 u=root |   [WARNING]: No hosts matched, nothing to do
+
+2022-02-06 10:53:19,019 p=58 u=root |  spine-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "[Errno -2] Name or service not known", 
+    "unreachable": true
+}
+2022-02-06 10:53:19,024 p=58 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "[Errno -2] Name or service not known", 
+    "unreachable": true
+}
+2022-02-06 11:16:07,041 p=26 u=root |  spine-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname spine-02: Name or service not known", 
+    "unreachable": true
+}
+2022-02-06 11:16:07,046 p=26 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname spine-01: Name or service not known", 
+    "unreachable": true
+}
+2022-02-06 11:17:38,010 p=48 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname spine-01: Name or service not known", 
+    "unreachable": true
+}
+2022-02-06 11:21:29,300 p=36 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:21:29,325 p=36 u=root |  spine-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:21:29,333 p=36 u=root |  leaf-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:21:29,347 p=36 u=root |  leaf-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:23:25,879 p=71 u=root |  ERROR! Missing required action
+2022-02-06 11:24:09,262 p=76 u=root |  ERROR! Missing required action
+2022-02-06 11:27:10,377 p=81 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:27:10,378 p=81 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:27:10,395 p=81 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:27:10,395 p=81 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:27:10,410 p=81 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml inventory source with yaml plugin
+2022-02-06 11:27:11,228 p=81 u=root |  META: ran handlers
+2022-02-06 11:27:11,378 p=81 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:27:11,380 p=81 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:27:11,587 p=81 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:27:11,602 p=81 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:33:42,342 p=102 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:33:42,343 p=102 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:33:42,358 p=102 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:33:42,359 p=102 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:33:42,367 p=102 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml inventory source with yaml plugin
+2022-02-06 11:33:43,044 p=102 u=root |  META: ran handlers
+2022-02-06 11:33:43,165 p=102 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:33:43,168 p=102 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:33:43,369 p=102 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:33:43,379 p=102 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:36:21,275 p=121 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:36:21,276 p=121 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:36:21,290 p=121 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:36:21,291 p=121 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 11:36:21,302 p=121 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml inventory source with yaml plugin
+2022-02-06 11:36:22,082 p=121 u=root |  META: ran handlers
+2022-02-06 11:36:22,206 p=121 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:36:22,209 p=121 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:36:22,409 p=121 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:36:22,418 p=121 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:36:35,930 p=136 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:36:35,931 p=136 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:36:35,947 p=136 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:36:35,948 p=136 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:36:35,948 p=136 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:36:35,954 p=136 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:36:36,846 p=136 u=root |  META: ran handlers
+2022-02-06 11:36:36,963 p=136 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:36:36,966 p=136 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:36:37,166 p=136 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:36:37,201 p=136 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:39:55,897 p=165 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:39:55,898 p=165 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:39:55,915 p=165 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:39:55,916 p=165 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:39:55,917 p=165 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:39:55,928 p=165 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:39:56,769 p=165 u=root |  META: ran handlers
+2022-02-06 11:39:56,886 p=165 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:39:56,888 p=165 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:39:57,085 p=165 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:39:57,095 p=165 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:40:51,266 p=182 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:40:51,267 p=182 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:40:51,284 p=182 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:40:51,285 p=182 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:40:51,285 p=182 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:40:51,292 p=182 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:40:52,083 p=182 u=root |  META: ran handlers
+2022-02-06 11:40:52,239 p=182 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: None
+2022-02-06 11:40:52,241 p=182 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/46e5074363 spine-01 '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+2022-02-06 11:40:52,447 p=182 u=root |  <spine-01> (255, '', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).\r\n')
+2022-02-06 11:40:52,459 p=182 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 11:41:14,669 p=198 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:41:14,669 p=198 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:41:14,685 p=198 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:41:14,685 p=198 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:41:14,686 p=198 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:41:14,691 p=198 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:41:15,331 p=198 u=root |  META: ran handlers
+2022-02-06 11:41:15,443 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:15,445 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 11:41:15,931 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\n')
+2022-02-06 11:41:15,932 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:15,935 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644147675.44-26600224812290 `" && echo ansible-tmp-1644147675.44-26600224812290="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644147675.44-26600224812290 `" ) && sleep 0'"'"''
+2022-02-06 11:41:16,146 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 11:41:16,405 p=198 u=root |  <spine-01> Attempting python interpreter discovery
+2022-02-06 11:41:16,405 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:16,407 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2022-02-06 11:41:16,633 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n\nerror: unknown command: uname\n\nerror: unknown command: echo\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: echo\n', '')
+2022-02-06 11:41:16,637 p=198 u=root |   [WARNING]: Unhandled error in Python interpreter discovery for host spine-01: unexpected output from Python interpreter discovery
+
+2022-02-06 11:41:16,643 p=198 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 11:41:16,645 p=198 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-198Mm27lH/tmpM0QxXu TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 11:41:16,647 p=198 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 11:41:16,724 p=198 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:41:16,728 p=198 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-198Mm27lH/tmpM0QxXu '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 11:41:16,814 p=198 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:41:16,814 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:16,816 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 11:41:17,011 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 11:41:17,011 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 11:41:17,012 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:17,014 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 11:41:17,200 p=198 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 11:41:17,201 p=198 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:41:17,203 p=198 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'/usr/bin/python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 11:41:17,408 p=198 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 11:41:17,443 p=198 u=root |   [WARNING]: Platform unknown on host spine-01 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change
+this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html for more information.
+
+2022-02-06 11:41:17,444 p=198 u=root |  spine-01 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 11:43:24,383 p=227 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 11:43:24,385 p=227 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:43:24,404 p=227 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:43:24,405 p=227 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:43:24,405 p=227 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 11:43:24,411 p=227 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:43:25,357 p=227 u=root |  META: ran handlers
+2022-02-06 11:43:25,482 p=227 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:43:25,485 p=227 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 11:43:25,926 p=227 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', 'Failed to add the host to the list of known hosts (/root/.ssh/known_hosts).\r\n')
+2022-02-06 11:43:25,928 p=227 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:43:25,931 p=227 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644147805.48-247435443646059 `" && echo ansible-tmp-1644147805.48-247435443646059="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644147805.48-247435443646059 `" ) && sleep 0'"'"''
+2022-02-06 11:43:26,112 p=227 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 11:43:26,399 p=227 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 11:43:26,401 p=227 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-227qdJwu_/tmpGGMdrW TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 11:43:26,402 p=227 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 11:43:26,472 p=227 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:43:26,476 p=227 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-227qdJwu_/tmpGGMdrW '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 11:43:26,554 p=227 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:43:26,555 p=227 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:43:26,557 p=227 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 11:43:26,749 p=227 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 11:43:26,750 p=227 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 11:43:26,750 p=227 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:43:26,752 p=227 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 11:43:26,933 p=227 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 11:43:26,934 p=227 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 11:43:26,936 p=227 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'/usr/bin/python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 11:43:27,121 p=227 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 11:43:27,140 p=227 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 11:50:00,271 p=36 u=root |  ansible 2.4.2.0
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python2.7/dist-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609]
+2022-02-06 11:50:00,271 p=36 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 11:50:00,276 p=36 u=root |  setting up inventory plugins
+2022-02-06 11:50:00,285 p=36 u=root |   [WARNING]: Failed to load inventory plugin, skipping auto
+
+2022-02-06 11:50:00,295 p=36 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 11:50:00,557 p=36 u=root |  Loading callback plugin minimal of type stdout, v2.0 from /usr/local/lib/python2.7/dist-packages/ansible/plugins/callback/__init__.pyc
+2022-02-06 11:50:00,979 p=36 u=root |  META: ran handlers
+2022-02-06 11:50:01,379 p=36 u=root |  Using module file /usr/local/lib/python2.7/dist-packages/ansible/modules/system/ping.py
+2022-02-06 11:50:03,037 p=36 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:50:03,146 p=36 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 11:50:03,704 p=36 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "OpenSSH_7.2p2 Ubuntu-4ubuntu2.6, OpenSSL 1.0.2g  1 Mar 2016\r\ndebug1: Reading configuration data /etc/ssh/ssh_config\r\ndebug1: /etc/ssh/ssh_config line 19: Applying options for *\r\ndebug1: auto-mux: Trying existing master\r\ndebug2: fd 3 setting O_NONBLOCK\r\ndebug2: mux_client_hello_exchange: master version 4\r\ndebug3: mux_client_forwards: request forwardings: 0 local, 0 remote\r\ndebug3: mux_client_request_session: entering\r\ndebug3: mux_client_request_alive: entering\r\ndebug3: mux_client_request_alive: done pid = 47\r\ndebug3: mux_client_request_session: session request sent\r\ndebug1: mux_client_request_session: master session id: 2\r\ndebug3: mux_client_read_packet: read header failed: Broken pipe\r\ndebug2: Received exit status from master 0\r\nShared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE", 
+    "rc": 0
+}
+2022-02-06 11:58:41,845 p=32 u=root |  spine-01 | FAILED! => {
+    "msg": "to use the 'ssh' connection type with passwords, you must install the sshpass program"
+}
+2022-02-06 12:01:05,278 p=57 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:01:05,361 p=57 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:01:05,924 p=57 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:01:46,043 p=83 u=root |  ERROR! Extraneous options or arguments
+2022-02-06 12:04:14,230 p=89 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 12:04:14,230 p=89 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 12:04:14,246 p=89 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:04:14,246 p=89 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:04:14,247 p=89 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:04:14,254 p=89 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 12:04:14,987 p=89 u=root |  META: ran handlers
+2022-02-06 12:04:15,107 p=89 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:04:15,110 p=89 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 12:04:15,531 p=89 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:04:15,532 p=89 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:04:15,534 p=89 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149055.11-74035674090641 `" && echo ansible-tmp-1644149055.11-74035674090641="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149055.11-74035674090641 `" ) && sleep 0'"'"''
+2022-02-06 12:04:15,721 p=89 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:04:15,963 p=89 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 12:04:15,965 p=89 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-89g_RHuR/tmpp56OKH TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 12:04:15,966 p=89 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 12:04:16,035 p=89 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:04:16,037 p=89 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-89g_RHuR/tmpp56OKH '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 12:04:16,124 p=89 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:04:16,125 p=89 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:04:16,127 p=89 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 12:04:16,321 p=89 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:04:16,321 p=89 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:04:16,322 p=89 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:04:16,323 p=89 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:04:16,508 p=89 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:04:16,509 p=89 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:04:16,512 p=89 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'/usr/bin/python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:04:16,695 p=89 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 12:04:16,710 p=89 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:05:02,973 p=116 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 12:05:02,973 p=116 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 12:05:02,990 p=116 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:05:02,990 p=116 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:05:02,991 p=116 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:05:02,997 p=116 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 12:05:03,653 p=116 u=root |  META: ran handlers
+2022-02-06 12:05:03,760 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:03,762 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 12:05:03,929 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:05:03,930 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:03,932 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149103.76-161874359098625 `" && echo ansible-tmp-1644149103.76-161874359098625="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149103.76-161874359098625 `" ) && sleep 0'"'"''
+2022-02-06 12:05:04,102 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:05:04,376 p=116 u=root |  <spine-01> Attempting python interpreter discovery
+2022-02-06 12:05:04,377 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:04,379 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2022-02-06 12:05:04,578 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n\nerror: unknown command: uname\n\nerror: unknown command: echo\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: echo\n', '')
+2022-02-06 12:05:04,581 p=116 u=root |   [WARNING]: Unhandled error in Python interpreter discovery for host spine-01: unexpected output from Python interpreter discovery
+
+2022-02-06 12:05:04,587 p=116 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 12:05:04,588 p=116 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-116XQ0OSP/tmpliehtb TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 12:05:04,589 p=116 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 12:05:04,655 p=116 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:05:04,658 p=116 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-116XQ0OSP/tmpliehtb '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 12:05:04,736 p=116 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:05:04,737 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:04,739 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 12:05:04,918 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:05:04,918 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:05:04,919 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:04,921 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:05:05,085 p=116 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:05:05,086 p=116 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:05:05,087 p=116 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'/usr/bin/python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:05:05,290 p=116 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 12:05:05,316 p=116 u=root |   [WARNING]: Platform unknown on host spine-01 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change
+this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html for more information.
+
+2022-02-06 12:05:05,317 p=116 u=root |  spine-01 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:07:39,846 p=157 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 12:07:39,847 p=157 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 12:07:39,865 p=157 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:07:39,866 p=157 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:07:39,866 p=157 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:07:39,875 p=157 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 12:07:40,783 p=157 u=root |  META: ran handlers
+2022-02-06 12:07:40,982 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:40,985 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 12:07:41,649 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:07:41,650 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:41,653 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149260.98-204627607827082 `" && echo ansible-tmp-1644149260.98-204627607827082="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149260.98-204627607827082 `" ) && sleep 0'"'"''
+2022-02-06 12:07:41,820 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:07:42,078 p=157 u=root |  <spine-01> Attempting python interpreter discovery
+2022-02-06 12:07:42,079 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:42,081 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2022-02-06 12:07:42,362 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n\nerror: unknown command: uname\n\nerror: unknown command: echo\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: command\n\nerror: unknown command: echo\n', '')
+2022-02-06 12:07:42,366 p=157 u=root |   [WARNING]: Unhandled error in Python interpreter discovery for host spine-01: unexpected output from Python interpreter discovery
+
+2022-02-06 12:07:42,372 p=157 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 12:07:42,373 p=157 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-157Ljd2bC/tmp2aVAyS TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 12:07:42,375 p=157 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 12:07:42,438 p=157 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:07:42,441 p=157 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-157Ljd2bC/tmp2aVAyS '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 12:07:42,525 p=157 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:07:42,526 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:42,529 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 12:07:42,751 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:07:42,752 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:07:42,752 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:42,754 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:07:42,920 p=157 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:07:42,921 p=157 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:07:42,924 p=157 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'/usr/bin/python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:07:43,123 p=157 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 12:07:43,150 p=157 u=root |   [WARNING]: Platform unknown on host spine-01 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change
+this. See https://docs.ansible.com/ansible/2.8/reference_appendices/interpreter_discovery.html for more information.
+
+2022-02-06 12:07:43,151 p=157 u=root |  spine-01 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:10:03,149 p=185 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 12:10:03,150 p=185 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 12:10:03,163 p=185 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:03,163 p=185 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:03,164 p=185 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:03,169 p=185 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 12:10:03,871 p=185 u=root |  META: ran handlers
+2022-02-06 12:10:03,988 p=185 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:03,990 p=185 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 12:10:04,407 p=185 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:04,409 p=185 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:04,411 p=185 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149403.99-232560275041359 `" && echo ansible-tmp-1644149403.99-232560275041359="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149403.99-232560275041359 `" ) && sleep 0'"'"''
+2022-02-06 12:10:04,582 p=185 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:04,989 p=185 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 12:10:04,990 p=185 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-185HxVD8G/tmpGchuZs TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 12:10:04,992 p=185 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 12:10:05,067 p=185 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:10:05,070 p=185 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-185HxVD8G/tmpGchuZs '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 12:10:05,152 p=185 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:10:05,152 p=185 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:05,154 p=185 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 12:10:05,337 p=185 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:10:05,338 p=185 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:10:05,339 p=185 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:05,341 p=185 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:10:05,510 p=185 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:05,511 p=185 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:05,513 p=185 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:10:05,709 p=185 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 12:10:05,725 p=185 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:10:56,778 p=220 u=root |  ansible 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 12:10:56,779 p=220 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 12:10:56,795 p=220 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:56,795 p=220 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:56,796 p=220 u=root |  yaml declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini as it did not pass it's verify_file() method
+2022-02-06 12:10:56,802 p=220 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/inventory.ini inventory source with ini plugin
+2022-02-06 12:10:57,614 p=220 u=root |  META: ran handlers
+2022-02-06 12:10:57,740 p=220 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:57,743 p=220 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'echo ~kashif && sleep 0'"'"''
+2022-02-06 12:10:57,917 p=220 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:57,918 p=220 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:57,920 p=220 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149457.74-18154663961204 `" && echo ansible-tmp-1644149457.74-18154663961204="` echo error: unknown command: /bin/sh/.ansible/tmp/ansible-tmp-1644149457.74-18154663961204 `" ) && sleep 0'"'"''
+2022-02-06 12:10:58,097 p=220 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:58,390 p=220 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+2022-02-06 12:10:58,392 p=220 u=root |  <spine-01> PUT /root/.ansible/tmp/ansible-local-2202yTkQv/tmpBfPIuz TO error: unknown command: /bin/sh/AnsiballZ_ping.py
+2022-02-06 12:10:58,393 p=220 u=root |  <spine-01> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 '[spine-01]'
+2022-02-06 12:10:58,459 p=220 u=root |   [WARNING]: sftp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:10:58,461 p=220 u=root |  <spine-01> SSH: EXEC scp -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 /root/.ansible/tmp/ansible-local-2202yTkQv/tmpBfPIuz '[spine-01]:'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"''
+2022-02-06 12:10:58,543 p=220 u=root |   [WARNING]: scp transfer mechanism failed on [spine-01]. Use ANSIBLE_DEBUG=1 to see detailed information
+
+2022-02-06 12:10:58,545 p=220 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:58,547 p=220 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 'dd of=error: unknown command: /bin/sh/AnsiballZ_ping.py bs=65536'
+2022-02-06 12:10:58,756 p=220 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:10:58,757 p=220 u=root |  <spine-01> (0, '\nerror: unknown command: dd\n', '')
+2022-02-06 12:10:58,758 p=220 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:58,760 p=220 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 spine-01 '/bin/sh -c '"'"'chmod u+x '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/'"'"'"'"'"'"'"'"' '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:10:58,941 p=220 u=root |  <spine-01> (0, '\nerror: unknown command: /bin/sh\n', '')
+2022-02-06 12:10:58,943 p=220 u=root |  <spine-01> ESTABLISH SSH CONNECTION FOR USER: kashif
+2022-02-06 12:10:58,945 p=220 u=root |  <spine-01> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="kashif"' -o ConnectTimeout=10 -o ControlPath=/root/.ansible/cp/5b9feaa984 -tt spine-01 '/bin/sh -c '"'"'python '"'"'"'"'"'"'"'"'error: unknown command: /bin/sh/AnsiballZ_ping.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2022-02-06 12:10:59,153 p=220 u=root |  <spine-01> (0, '\r\nerror: unknown command: /bin/sh\r\n', 'Shared connection to spine-01 closed.\r\n')
+2022-02-06 12:10:59,184 p=220 u=root |  spine-01 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to spine-01 closed.\r\n", 
+    "module_stdout": "\r\nerror: unknown command: /bin/sh\r\n", 
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
+    "rc": 0
+}
+2022-02-06 12:13:50,643 p=243 u=root |  spine-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:18:30,276 p=273 u=root |  leaf-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:18:30,279 p=273 u=root |  spine-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:18:30,280 p=273 u=root |  spine-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:18:30,283 p=273 u=root |  leaf-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:19:07,296 p=361 u=root |  leaf-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:19:07,301 p=361 u=root |  spine-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:19:07,317 p=361 u=root |  leaf-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:19:07,326 p=361 u=root |  spine-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:20:18,165 p=478 u=root |  spine-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:20:18,179 p=478 u=root |  leaf-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:20:18,181 p=478 u=root |  spine-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:20:18,205 p=478 u=root |  leaf-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:27:21,733 p=575 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:21,736 p=575 u=root |  spine-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'spine-02' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:21,760 p=575 u=root |  leaf-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'leaf-02' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:21,800 p=575 u=root |  leaf-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'leaf-01' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:37,481 p=603 u=root |  spine-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:37,489 p=603 u=root |  leaf-02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:37,497 p=603 u=root |  spine-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:37,527 p=603 u=root |  leaf-01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,password,keyboard-interactive).", 
+    "unreachable": true
+}
+2022-02-06 12:27:44,466 p=630 u=root |  leaf-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:27:44,475 p=630 u=root |  spine-02 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:27:44,481 p=630 u=root |  spine-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 12:27:44,514 p=630 u=root |  leaf-01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2022-02-06 15:22:18,677 p=36 u=root |  leaf-01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 15:22:18,678 p=36 u=root |  spine-01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 15:22:18,681 p=36 u=root |  leaf-02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 15:22:18,683 p=36 u=root |  spine-02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 15:22:51,731 p=118 u=root |  PLAY [Generate IP Fabric Configuration] ******************************************************************************************************************************************
+2022-02-06 15:22:51,776 p=118 u=root |  TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2022-02-06 15:23:04,754 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:05,212 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:05,330 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:05,478 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:05,502 p=118 u=root |  TASK [create a site directory if its not present] ********************************************************************************************************************************
+2022-02-06 15:23:06,090 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:06,115 p=118 u=root |  TASK [check if the host directory is present] ************************************************************************************************************************************
+2022-02-06 15:23:06,701 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:06,704 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:06,706 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:06,780 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:06,804 p=118 u=root |  TASK [create a host directory if its not present] ********************************************************************************************************************************
+2022-02-06 15:23:06,845 p=118 u=root |  skipping: [spine-01]
+2022-02-06 15:23:06,879 p=118 u=root |  skipping: [spine-02]
+2022-02-06 15:23:06,913 p=118 u=root |  skipping: [leaf-01]
+2022-02-06 15:23:06,940 p=118 u=root |  skipping: [leaf-02]
+2022-02-06 15:23:06,961 p=118 u=root |  TASK [check if the backup directory is present] **********************************************************************************************************************************
+2022-02-06 15:23:07,294 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:07,326 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:07,344 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:07,412 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:07,434 p=118 u=root |  TASK [create a backup directory if its not present] ******************************************************************************************************************************
+2022-02-06 15:23:07,475 p=118 u=root |  skipping: [spine-01]
+2022-02-06 15:23:07,509 p=118 u=root |  skipping: [spine-02]
+2022-02-06 15:23:07,542 p=118 u=root |  skipping: [leaf-01]
+2022-02-06 15:23:07,565 p=118 u=root |  skipping: [leaf-02]
+2022-02-06 15:23:07,589 p=118 u=root |  TASK [generate P2P IPs] **********************************************************************************************************************************************************
+2022-02-06 15:23:07,883 p=118 u=root |  TASK [generate-p2p-ips : Generate P2P IPs] ***************************************************************************************************************************************
+2022-02-06 15:23:08,515 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:08,537 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:08,565 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:08,663 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:08,688 p=118 u=root |  TASK [getting  generated_p2p_ips] ************************************************************************************************************************************************
+2022-02-06 15:23:08,736 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:08,770 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:08,804 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:08,830 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:08,853 p=118 u=root |  TASK [generate underlay ebgp vars] ***********************************************************************************************************************************************
+2022-02-06 15:23:09,109 p=118 u=root |   [WARNING]: While constructing a mapping from /root/ansible-junos-evpn-vxlan/roles/generate-underlay-vars/tasks/main.yaml, line 4, column 5, found a duplicate dict key (file).
+Using last defined value only.
+
+2022-02-06 15:23:09,178 p=118 u=root |  TASK [generate-underlay-vars : getting  vars] ************************************************************************************************************************************
+2022-02-06 15:23:09,256 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:09,305 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:09,308 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:09,336 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:09,360 p=118 u=root |  TASK [generate-underlay-vars : Generate Underlay YAML] ***************************************************************************************************************************
+2022-02-06 15:23:10,342 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:10,352 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:10,353 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:10,356 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:10,382 p=118 u=root |  TASK [generate overlay vars] *****************************************************************************************************************************************************
+2022-02-06 15:23:10,656 p=118 u=root |   [WARNING]: While constructing a mapping from /root/ansible-junos-evpn-vxlan/roles/generate-overlay-vars/tasks/main.yaml, line 4, column 5, found a duplicate dict key (file).
+Using last defined value only.
+
+2022-02-06 15:23:10,725 p=118 u=root |  TASK [generate-overlay-vars : getting  vars] *************************************************************************************************************************************
+2022-02-06 15:23:10,808 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:10,844 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:10,850 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:10,876 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:10,897 p=118 u=root |  TASK [generate-overlay-vars : Generate Underlay YAML] ****************************************************************************************************************************
+2022-02-06 15:23:11,732 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:11,735 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:11,757 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:11,813 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:11,838 p=118 u=root |  TASK [generate tenant vars] ******************************************************************************************************************************************************
+2022-02-06 15:23:12,136 p=118 u=root |   [WARNING]: While constructing a mapping from /root/ansible-junos-evpn-vxlan/roles/generate-tenant-vars/tasks/main.yaml, line 4, column 5, found a duplicate dict key (file).
+Using last defined value only.
+
+2022-02-06 15:23:12,219 p=118 u=root |  TASK [generate-tenant-vars : getting  vars] **************************************************************************************************************************************
+2022-02-06 15:23:12,279 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:12,328 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:12,391 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:12,433 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:12,457 p=118 u=root |  TASK [generate-tenant-vars : Generate Tenant / VNI variables files] **************************************************************************************************************
+2022-02-06 15:23:13,240 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:13,301 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:13,342 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:13,359 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:13,385 p=118 u=root |  TASK [getting underlay-ebgp vars] ************************************************************************************************************************************************
+2022-02-06 15:23:13,462 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:13,500 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:13,502 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:13,533 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:13,556 p=118 u=root |  TASK [getting overlay vars] ******************************************************************************************************************************************************
+2022-02-06 15:23:13,641 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:13,678 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:13,682 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:13,703 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:13,726 p=118 u=root |  TASK [getting tenant vars] *******************************************************************************************************************************************************
+2022-02-06 15:23:13,807 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:13,847 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:13,851 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:13,879 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:13,902 p=118 u=root |  TASK [generate underlay ebgp config] *********************************************************************************************************************************************
+2022-02-06 15:23:14,275 p=118 u=root |  TASK [generate-underlay-ebgp : move file to backup directory if it is present] ***************************************************************************************************
+2022-02-06 15:23:16,510 p=118 u=root |  changed: [spine-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-01/underlay-ebgp.2020-02-04-06:46:23.conf.part)
+2022-02-06 15:23:16,666 p=118 u=root |  changed: [leaf-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-01/underlay-ebgp.2020-02-04-06:46:24.conf.part)
+2022-02-06 15:23:16,668 p=118 u=root |  changed: [leaf-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-02/underlay-ebgp.2020-02-04-06:46:23.conf.part)
+2022-02-06 15:23:16,919 p=118 u=root |  changed: [spine-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-02/underlay-ebgp.2020-02-04-06:46:23.conf.part)
+2022-02-06 15:23:16,942 p=118 u=root |  TASK [generate-underlay-ebgp : Building underlay configuration with EBGP] ********************************************************************************************************
+2022-02-06 15:23:17,750 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:17,782 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:17,783 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:17,909 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:17,955 p=118 u=root |  TASK [generate overlay mp-ibgp config] *******************************************************************************************************************************************
+2022-02-06 15:23:18,349 p=118 u=root |  TASK [generate-overlay-ibgp : move file to backup directory if it is present] ****************************************************************************************************
+2022-02-06 15:23:20,205 p=118 u=root |  changed: [spine-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-02/overlay-ibgp.2020-02-04-06:46:25.conf.part)
+2022-02-06 15:23:20,218 p=118 u=root |  changed: [leaf-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-01/overlay-ibgp.2020-02-04-06:46:25.conf.part)
+2022-02-06 15:23:20,239 p=118 u=root |  changed: [leaf-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-02/overlay-ibgp.2020-02-04-06:46:25.conf.part)
+2022-02-06 15:23:20,364 p=118 u=root |  changed: [spine-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-01/overlay-ibgp.2020-02-04-06:46:25.conf.part)
+2022-02-06 15:23:20,389 p=118 u=root |  TASK [generate-overlay-ibgp : Building EVPN-VXLAN configuration for QFX / L3] ****************************************************************************************************
+2022-02-06 15:23:21,037 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:21,051 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:21,081 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:21,146 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:21,170 p=118 u=root |  TASK [generate tenant config] ****************************************************************************************************************************************************
+2022-02-06 15:23:21,543 p=118 u=root |  TASK [generate-tenant-config : move file to backup directory if it is present] ***************************************************************************************************
+2022-02-06 15:23:23,271 p=118 u=root |  changed: [spine-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-02/tenant.2020-02-04-06:46:26.conf.part)
+2022-02-06 15:23:23,369 p=118 u=root |  changed: [spine-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-01/tenant.2020-02-04-06:46:26.conf.part)
+2022-02-06 15:23:23,428 p=118 u=root |  changed: [leaf-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-01/tenant.2020-02-04-06:46:26.conf.part)
+2022-02-06 15:23:23,528 p=118 u=root |  changed: [leaf-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-02/tenant.2020-02-04-06:46:26.conf.part)
+2022-02-06 15:23:23,554 p=118 u=root |  TASK [generate-tenant-config : Building EVPN-VXLAN configuration for QFX / L3] ***************************************************************************************************
+2022-02-06 15:23:24,266 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:24,302 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:24,326 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:24,391 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:24,416 p=118 u=root |  TASK [generate evpn access] ******************************************************************************************************************************************************
+2022-02-06 15:23:24,709 p=118 u=root |   [WARNING]: While constructing a mapping from /root/ansible-junos-evpn-vxlan/roles/generate-evpn-access/tasks/main.yaml, line 4, column 5, found a duplicate dict key (file).
+Using last defined value only.
+
+2022-02-06 15:23:24,817 p=118 u=root |  TASK [generate-evpn-access : getting  vars] **************************************************************************************************************************************
+2022-02-06 15:23:24,898 p=118 u=root |  ok: [spine-01]
+2022-02-06 15:23:24,938 p=118 u=root |  ok: [spine-02]
+2022-02-06 15:23:24,940 p=118 u=root |  ok: [leaf-01]
+2022-02-06 15:23:24,971 p=118 u=root |  ok: [leaf-02]
+2022-02-06 15:23:24,997 p=118 u=root |  TASK [generate-evpn-access : move file to backup directory if it is present] *****************************************************************************************************
+2022-02-06 15:23:26,773 p=118 u=root |  changed: [spine-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-01/evpn-access.2020-01-31-18:54:44.conf.part)
+2022-02-06 15:23:26,811 p=118 u=root |  changed: [leaf-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-01/evpn-access.2020-01-31-18:54:44.conf.part)
+2022-02-06 15:23:26,941 p=118 u=root |  changed: [spine-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-02/evpn-access.2020-01-31-18:54:44.conf.part)
+2022-02-06 15:23:27,033 p=118 u=root |  changed: [leaf-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-02/evpn-access.2020-01-31-18:54:44.conf.part)
+2022-02-06 15:23:27,061 p=118 u=root |  TASK [generate-evpn-access : Generate Underlay YAML] *****************************************************************************************************************************
+2022-02-06 15:23:27,672 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:27,761 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:27,816 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:27,857 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:27,881 p=118 u=root |  TASK [Executing a Specific Role] *************************************************************************************************************************************************
+2022-02-06 15:23:27,956 p=118 u=root |  skipping: [spine-01]
+2022-02-06 15:23:27,990 p=118 u=root |  skipping: [spine-02]
+2022-02-06 15:23:27,995 p=118 u=root |  skipping: [leaf-01]
+2022-02-06 15:23:28,015 p=118 u=root |  skipping: [leaf-02]
+2022-02-06 15:23:28,039 p=118 u=root |  TASK [generate main configuration] ***********************************************************************************************************************************************
+2022-02-06 15:23:28,459 p=118 u=root |  TASK [generate-assembled-configuration : move file to backup directory if it is present] *****************************************************************************************
+2022-02-06 15:23:30,267 p=118 u=root |  changed: [spine-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-01/main.spine-01-config-2020-02-04-06:46:27.conf)
+2022-02-06 15:23:30,310 p=118 u=root |  changed: [leaf-01] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-01/main.leaf-01-config-2020-02-04-06:46:28.conf)
+2022-02-06 15:23:30,328 p=118 u=root |  changed: [spine-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/spine-02/main.spine-02-config-2020-02-04-06:46:27.conf)
+2022-02-06 15:23:30,394 p=118 u=root |  changed: [leaf-02] => (item=/root/ansible-junos-evpn-vxlan/host_vars/lab/leaf-02/main.leaf-02-config-2020-02-04-06:46:28.conf)
+2022-02-06 15:23:30,419 p=118 u=root |  TASK [generate-assembled-configuration : Assembling configurations and copying to conf] ******************************************************************************************
+2022-02-06 15:23:31,017 p=118 u=root |  changed: [spine-01]
+2022-02-06 15:23:31,023 p=118 u=root |  changed: [leaf-01]
+2022-02-06 15:23:31,028 p=118 u=root |  changed: [spine-02]
+2022-02-06 15:23:31,047 p=118 u=root |  changed: [leaf-02]
+2022-02-06 15:23:31,053 p=118 u=root |  PLAY RECAP ***********************************************************************************************************************************************************************
+2022-02-06 15:23:31,054 p=118 u=root |  leaf-01                    : ok=25   changed=12   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2022-02-06 15:23:31,054 p=118 u=root |  leaf-02                    : ok=25   changed=12   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2022-02-06 15:23:31,054 p=118 u=root |  spine-01                   : ok=26   changed=13   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2022-02-06 15:23:31,054 p=118 u=root |  spine-02                   : ok=25   changed=13   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2022-02-06 15:23:35,638 p=1986 u=root |  ansible-playbook 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.7.9 (default, Feb  6 2022, 15:10:36) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 15:23:35,639 p=1986 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 15:23:35,659 p=1986 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 15:23:35,660 p=1986 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 15:23:35,667 p=1986 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml inventory source with yaml plugin
+2022-02-06 15:23:36,798 p=1986 u=root |  PLAYBOOK: final_config_push.yml **************************************************************************************************************************************************
+2022-02-06 15:23:36,798 p=1986 u=root |  1 plays in final_config_push.yml
+2022-02-06 15:23:36,874 p=1986 u=root |  PLAY [Generate IP Fabric Configuration] ******************************************************************************************************************************************
+2022-02-06 15:23:36,917 p=1986 u=root |  TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2022-02-06 15:23:36,917 p=1986 u=root |  task path: /root/ansible-junos-evpn-vxlan/final_config_push.yml:4
+2022-02-06 15:23:36,942 p=1986 u=root |  <leaf-01> ESTABLISH LOCAL CONNECTION FOR USER: root
+2022-02-06 15:23:36,943 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'echo ~root && sleep 0'
+2022-02-06 15:23:36,964 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920 `" && echo ansible-tmp-1644161016.9410083-215674801966920="` echo /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920 `" ) && sleep 0'
+2022-02-06 15:23:37,758 p=1986 u=root |  Using module file /usr/local/lib/python3.7/site-packages/ansible/modules/system/setup.py
+2022-02-06 15:23:37,759 p=1986 u=root |  <leaf-01> PUT /root/.ansible/tmp/ansible-local-1986xfc1uj48/tmp_odk53wj TO /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920/AnsiballZ_setup.py
+2022-02-06 15:23:37,761 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920/ /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920/AnsiballZ_setup.py && sleep 0'
+2022-02-06 15:23:37,788 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'python /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920/AnsiballZ_setup.py && sleep 0'
+2022-02-06 15:23:46,382 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1644161016.9410083-215674801966920/ > /dev/null 2>&1 && sleep 0'
+2022-02-06 15:23:46,435 p=1986 u=root |  ok: [leaf-01]
+2022-02-06 15:23:46,437 p=1986 u=root |  META: ran handlers
+2022-02-06 15:23:46,460 p=1986 u=root |  TASK [Deploy Configuration] ******************************************************************************************************************************************************
+2022-02-06 15:23:46,460 p=1986 u=root |  task path: /root/ansible-junos-evpn-vxlan/final_config_push.yml:13
+2022-02-06 15:23:46,524 p=1986 u=root |  <192.168.2.6> using connection plugin netconf (was local)
+2022-02-06 15:23:47,331 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_7.3)
+2022-02-06 15:23:47,642 ncclient.transport.ssh Authentication (publickey) successful!
+2022-02-06 15:23:47,797 ncclient.transport.ssh [host 192.168.2.6 session 0x7fbca5a78f50] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:hello xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0"><nc:capabilities><nc:capability>urn:ietf:params:netconf:base:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:base:1.1</nc:capability><nc:capability>urn:ietf:params:netconf:capability:writable-running:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:candidate:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:confirmed-commit:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:rollback-on-error:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:startup:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:url:1.0?scheme=http,ftp,file,https,sftp</nc:capability><nc:capability>urn:ietf:params:netconf:capability:validate:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:xpath:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:notification:1.0</nc:capability><nc:capability>urn:liberouter:params:netconf:capability:power-control:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:interleave:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:with-defaults:1.0</nc:capability></nc:capabilities></nc:hello>]]>]]>
+2022-02-06 15:23:47,989 ncclient.transport.ssh [host 192.168.2.6 session 0x7fbca5a78f50] Received message from host
+2022-02-06 15:23:47,991 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] initialized: session-id=42840 | server_capabilities=<dict_keyiterator object at 0x7fbca5a5fad0>
+2022-02-06 15:23:48,111 p=1986 u=root |  loaded netconf plugin for network_os junos
+2022-02-06 15:23:48,111 p=1986 u=root |  network_os is set to junos
+2022-02-06 15:23:48,111 p=1986 u=root |  ssh connection done, starting ncclient
+2022-02-06 15:23:48,112 p=1986 u=root |  <192.168.2.6> ESTABLISH NETCONF SSH CONNECTION FOR USER: kashif on PORT 830 TO 192.168.2.6
+2022-02-06 15:23:48,112 p=1986 u=root |  ncclient manager object created successfully
+2022-02-06 15:23:48,115 p=1986 u=root |  <leaf-01> ESTABLISH LOCAL CONNECTION FOR USER: root
+2022-02-06 15:23:48,115 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'echo ~root && sleep 0'
+2022-02-06 15:23:48,135 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447 `" && echo ansible-tmp-1644161028.1137593-83545629906447="` echo /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447 `" ) && sleep 0'
+2022-02-06 15:23:48,458 p=1986 u=root |  Using module file /usr/local/lib/python3.7/site-packages/ansible/modules/network/junos/junos_config.py
+2022-02-06 15:23:48,459 p=1986 u=root |  <leaf-01> PUT /root/.ansible/tmp/ansible-local-1986xfc1uj48/tmpl20wgtm4 TO /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py
+2022-02-06 15:23:48,461 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/ /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py && sleep 0'
+2022-02-06 15:23:48,482 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'python /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py && sleep 0'
+2022-02-06 15:23:48,712 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'ExecuteRpc'
+2022-02-06 15:23:48,796 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:8dc28f15-7aa5-45d2-b008-e3459459ab07"><nc:get-software-information/></nc:rpc>]]>]]>
+2022-02-06 15:23:49,097 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:49,104 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'Lock'
+2022-02-06 15:23:49,199 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:e41acfae-bdba-46e4-b3af-83cbeca2ea65"><nc:lock><nc:target><nc:candidate/></nc:target></nc:lock></nc:rpc>]]>]]>
+2022-02-06 15:23:49,211 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:49,219 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'LoadConfiguration'
+2022-02-06 15:23:49,313 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2a2f49ec-99f7-4e29-8fa4-f26109018de4"><nc:load-configuration action="merge" format="text"><nc:configuration-text>
+
+chassis  {
+    aggregated-devices {
+        ethernet {
+            device-count 2;
+        }
+    }
+}
+
+interfaces {
+ ae0 {
+      description "BMS3-AE";
+      apply-groups GR-EDGE-INTF;
+       esi {
+            00:01:11:12:27:00:00:00:00:01;
+            all-active;
+        }
+      aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id 00:01:11:12:27:01;
+            }
+        }
+       unit 0 {
+            family ethernet-switching {
+               interface-mode trunk;
+                vlan {
+                    members [  300   301   302   1001 ];
+                }
+            }
+        }
+    }
+    replace: 
+    xe-0/0/3 {
+        description "BMS3-ETH1";
+        hold-time up 6000 down 0;
+        ether-options {
+            802.3ad ae0;
+        }
+    }
+
+ ae1 {
+      description "BMS-AE";
+      apply-groups GR-EDGE-INTF;
+       esi {
+            00:01:11:12:27:00:00:00:00:02;
+            all-active;
+        }
+      aggregated-ether-options {
+            lacp {
+                active;                 
+                system-id 00:01:11:12:27:02;
+            }
+        }
+       unit 0 {
+            family ethernet-switching {
+               interface-mode trunk;
+                vlan {
+                    members [  300   301   302   1001 ];
+                }
+            }
+        }
+    }
+    replace: 
+    xe-0/0/4 {
+        description "BMS4-ETH1";
+        hold-time up 6000 down 0;
+        ether-options {
+            802.3ad ae1;
+        }
+    }
+
+
+    replace:
+    xe-0/0/2 {
+      description "BSM1-ETH1";
+      apply-groups GR-EDGE-INTF;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [  1002 ];
+                }
+            }
+        }
+    }
+}
+/* This block of configuration has been generated by the role overlay-evpn-qfx-l3 for Ansible */
+routing-options {
+    autonomous-system 65050;
+    router-id 172.1.1.5;
+
+    forwarding-table {
+        ecmp-fast-reroute;
+    }
+}
+protocols {
+    bgp {
+        group overlay {
+            type internal;
+            family evpn {
+                signaling;
+            }
+            local-address 172.1.1.5;
+            multipath;
+            neighbor 172.1.1.1;
+            neighbor 172.1.1.2;
+            bfd-liveness-detection {
+            minimum-interval 600;
+            multiplier 3;
+            session-mode automatic;
+        }
+     }
+ }
+}
+/* This block of configuration has been generated by the role overlay-evpn-qfx-l3 for Ansible */
+protocols {
+    evpn {
+        encapsulation vxlan;
+        extended-vni-list [  300   301   302   1001   1002 ];
+        multicast-mode ingress-replication;
+        default-gateway do-not-advertise;
+        vni-options {
+            vni 300 {
+                vrf-target  target:65050:300;
+            }
+            vni 301 {
+                vrf-target  target:65050:301;
+            }
+            vni 302 {
+                vrf-target  target:65050:302;
+            }
+            vni 1001 {
+                vrf-target  target:65050:1001;
+            }
+            vni 1002 {
+                vrf-target  target:65050:1002;
+            }
+        }
+    }
+}
+switch-options {
+      vtep-source-interface lo0.0;
+      route-distinguisher 172.1.1.5:5;
+      vrf-import pl-leaf-in;
+      vrf-target target:9999:9999;
+  }
+
+
+interfaces {
+    replace: 
+    irb {
+        unit 300 {
+            description " vrouter_transport "
+            family inet {
+                address 192.168.254.1/24;
+                }
+            mac 00:00:5e:00:01:00;
+            }
+
+   }
+}
+
+
+replace:
+vlans {
+      vrouter_transport {
+        vlan-id 300;
+        l3-interface irb.300;
+        vxlan {
+            vni 300;
+            ingress-node-replication;
+        }
+    }
+      storage_access {
+        vlan-id 301;
+        vxlan {
+            vni 301;
+            ingress-node-replication;
+        }
+    }
+      storage_replication {
+        vlan-id 302;
+        vxlan {
+            vni 302;
+            ingress-node-replication;
+        }
+    }
+      sriov_1001 {
+        vlan-id 1001;
+        vxlan {
+            vni 1001;
+            ingress-node-replication;
+        }
+    }
+      sriov_1002 {
+        vlan-id 1002;
+        vxlan {
+            vni 1002;
+            ingress-node-replication;
+        }
+    }
+}
+
+
+policy-options {
+     policy-statement pl-leaf-in {
+        term sw-comm {
+            from community CM-LEAF-ESI;
+            then accept;
+        }
+        term import_vni_300 {
+            from community target:65050:300;
+            then accept;
+        }
+
+        term import_vni_301 {
+            from community target:65050:301;
+            then accept;
+        }
+
+        term import_vni_302 {
+            from community target:65050:302;
+            then accept;
+        }
+
+        term import_vni_1001 {
+            from community target:65050:1001;
+            then accept;
+        }
+
+        term import_vni_1002 {
+            from community target:65050:1002;
+            then accept;
+        }
+
+        term default {
+            then reject;
+        }
+    }
+    community CM-LEAF-ESI members target:9999:9999;
+    community target:65050:300 members target:65050:300;
+
+    community target:65050:301 members target:65050:301;
+
+    community target:65050:302 members target:65050:302;
+
+    community target:65050:1001 members target:65050:1001;
+
+    community target:65050:1002 members target:65050:1002;
+
+}
+
+
+
+/* This block of configuration has been generated by the role underlay-ebgp for Ansible */
+
+groups {
+    GR-CORE-INTF {
+        interfaces {
+            &lt;*&gt; {
+                traps;
+                mtu 9216;
+                hold-time up 5000 down 0;
+               
+            }
+        }
+    }
+    GR-EDGE-INTF {
+        interfaces {
+            &lt;*&gt; {
+                traps;
+                mtu 9118;
+                hold-time up 5000 down 0;
+            }
+			&lt;ae*&gt; {
+                aggregated-ether-options {
+                    lacp {
+                        active;
+                        periodic fast;
+                    }
+                }
+            }
+			
+        }
+    }
+}
+
+interfaces {
+       replace:
+    xe-0/0/0 {
+         apply-groups GR-CORE-INTF;
+        description " * to spine-01";
+        unit 0 {
+            family inet {
+                address 100.0.1.5/31;
+            }
+        }
+    }
+       replace:
+    xe-0/0/1 {
+         apply-groups GR-CORE-INTF;
+        description " * to spine-02";
+        unit 0 {
+            family inet {
+                address 100.0.1.9/31;
+            }
+        }
+    }
+lo0 {
+    unit 0 {
+        family inet {
+            address 172.1.1.5;
+        }
+    }
+}
+}
+
+protocols {
+    bgp {
+        log-updown;
+        graceful-restart;
+        replace:
+        group underlay {
+            export  bgp-ipclos-out;
+            import bgp-ipclos-in;
+            type external;
+            mtu-discovery;
+            local-as 65002;
+            multipath multiple-as;
+            neighbor 100.0.1.4 {
+                peer-as 65000;
+            }
+            neighbor 100.0.1.8 {
+                peer-as 65001;
+            }
+        }
+    }
+}
+
+routing-options {
+    router-id 172.1.1.5;
+    forwarding-table {
+        export pfe-ecmp;
+    }
+}
+
+policy-options {
+    policy-statement pfe-ecmp {
+        then {
+            load-balance per-packet;
+        }
+    }
+
+
+    policy-statement bgp-ipclos-out {
+        term loopback {
+            from {
+                protocol direct;
+                route-filter 172.1.1.5/32 exact;
+            }
+            then {
+                accept;
+            }
+        }
+ 
+        term vrouter_transport {
+            from {
+                route-filter 192.168.254.0/24 longer;
+
+            }
+            then {
+                accept;
+            }
+        }
+       term reject {
+         then reject;
+           }
+    }
+   
+    policy-statement bgp-ipclos-in {
+        term loopbacks {
+            from {
+                route-filter 172.1.1.0/24 orlonger;
+            }
+            then {
+                accept;
+             }
+        }
+        term reject {
+         then reject;
+           }
+    }
+}
+
+</nc:configuration-text></nc:load-configuration></nc:rpc>]]>]]>
+2022-02-06 15:23:49,404 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:49,408 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'Validate'
+2022-02-06 15:23:49,505 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:f8f296c0-9a4d-47bf-aa09-893f715cd3ae"><nc:validate><nc:source><nc:candidate/></nc:source></nc:validate></nc:rpc>]]>]]>
+2022-02-06 15:23:51,538 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:51,542 p=2032 u=root |  Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/ansible/utils/jsonrpc.py", line 45, in handle_request
+    result = rpc_method(*args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/ansible/plugins/netconf/__init__.py", line 50, in wrapped
+    return func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/ansible/plugins/netconf/__init__.py", line 200, in validate
+    resp = self.m.validate(source=source)
+  File "/usr/local/lib/python3.7/site-packages/ncclient/manager.py", line 231, in execute
+    huge_tree=self._huge_tree).request(*args, **kwds)
+  File "/usr/local/lib/python3.7/site-packages/ncclient/operations/edit.py", line 130, in request
+    return self._request(node)
+  File "/usr/local/lib/python3.7/site-packages/ncclient/operations/rpc.py", line 358, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: logical unit is not allowed on aggregated links
+error: configuration check-out failed
+
+2022-02-06 15:23:51,545 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'Unlock'
+2022-02-06 15:23:51,640 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:1d42b551-2b98-46c5-9be1-7638a92be5c2"><nc:unlock><nc:target><nc:candidate/></nc:target></nc:unlock></nc:rpc>]]>]]>
+2022-02-06 15:23:51,793 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:51,817 p=1986 u=root |  <leaf-01> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/ > /dev/null 2>&1 && sleep 0'
+2022-02-06 15:23:51,859 p=1986 u=root |  The full traceback is:
+Traceback (most recent call last):
+  File "/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py", line 114, in <module>
+    _ansiballz_main()
+  File "/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py", line 106, in _ansiballz_main
+    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+  File "/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py", line 49, in invoke_module
+    imp.load_module('__main__', mod, module, MOD_DESC)
+  File "/tmp/ansible_junos_config_payload_QGnu_7/__main__.py", line 482, in <module>
+  File "/tmp/ansible_junos_config_payload_QGnu_7/__main__.py", line 447, in main
+  File "/tmp/ansible_junos_config_payload_QGnu_7/__main__.py", line 363, in configure_device
+  File "/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/junos/junos.py", line 251, in load_config
+  File "/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/common/netconf.py", line 76, in __rpc__
+  File "/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/common/netconf.py", line 108, in parse_rpc_error
+ansible.module_utils.connection.ConnectionError: error: logical unit is not allowed on aggregated links
+error: configuration check-out failed
+
+2022-02-06 15:23:51,860 p=1986 u=root |  fatal: [leaf-01]: FAILED! => {
+    "changed": false,
+    "failed_when_result": true,
+    "module_stderr": "Traceback (most recent call last):\n  File \"/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py\", line 114, in <module>\n    _ansiballz_main()\n  File \"/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py\", line 106, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/root/.ansible/tmp/ansible-tmp-1644161028.1137593-83545629906447/AnsiballZ_junos_config.py\", line 49, in invoke_module\n    imp.load_module('__main__', mod, module, MOD_DESC)\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/__main__.py\", line 482, in <module>\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/__main__.py\", line 447, in main\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/__main__.py\", line 363, in configure_device\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/junos/junos.py\", line 251, in load_config\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/common/netconf.py\", line 76, in __rpc__\n  File \"/tmp/ansible_junos_config_payload_QGnu_7/ansible_junos_config_payload.zip/ansible/module_utils/network/common/netconf.py\", line 108, in parse_rpc_error\nansible.module_utils.connection.ConnectionError: error: logical unit is not allowed on aggregated links\nerror: configuration check-out failed\n",
+    "module_stdout": "",
+    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error",
+    "rc": 1
+}
+2022-02-06 15:23:51,862 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'CloseSession'
+2022-02-06 15:23:51,894 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:de380484-1a7e-4f54-a289-dd6ec7c8306d"><nc:close-session/></nc:rpc>]]>]]>
+2022-02-06 15:23:51,909 ncclient.transport.ssh [host 192.168.2.6 session-id 42840] Received message from host
+2022-02-06 15:23:51,916 p=1986 u=root |  PLAY RECAP ***********************************************************************************************************************************************************************
+2022-02-06 15:23:51,917 p=1986 u=root |  leaf-01                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-02-06 15:23:52,016 ncclient.operations.rpc [host 192.168.2.6 session-id 42840] Requesting 'CloseSession'
+2022-02-06 15:23:52,017 p=2032 u=root |  shutdown complete
+2022-02-06 15:26:57,405 p=2068 u=root |  ansible-playbook 2.8.3
+  config file = /root/ansible-junos-evpn-vxlan/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.7.9 (default, Feb  6 2022, 15:10:36) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+2022-02-06 15:26:57,405 p=2068 u=root |  Using /root/ansible-junos-evpn-vxlan/ansible.cfg as config file
+2022-02-06 15:26:57,422 p=2068 u=root |  host_list declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 15:26:57,423 p=2068 u=root |  script declined parsing /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml as it did not pass it's verify_file() method
+2022-02-06 15:26:57,429 p=2068 u=root |  Parsed /root/ansible-junos-evpn-vxlan/inventory/lab/hosts.yml inventory source with yaml plugin
+2022-02-06 15:26:58,928 p=2068 u=root |  PLAYBOOK: final_config_push.yml **************************************************************************************************************************************************
+2022-02-06 15:26:58,928 p=2068 u=root |  1 plays in final_config_push.yml
+2022-02-06 15:26:59,011 p=2068 u=root |  PLAY [Generate IP Fabric Configuration] ******************************************************************************************************************************************
+2022-02-06 15:26:59,055 p=2068 u=root |  TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2022-02-06 15:26:59,055 p=2068 u=root |  task path: /root/ansible-junos-evpn-vxlan/final_config_push.yml:4
+2022-02-06 15:26:59,080 p=2068 u=root |  <leaf-01> ESTABLISH LOCAL CONNECTION FOR USER: root
+2022-02-06 15:26:59,081 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'echo ~root && sleep 0'
+2022-02-06 15:26:59,103 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409 `" && echo ansible-tmp-1644161219.0792434-64003586875409="` echo /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409 `" ) && sleep 0'
+2022-02-06 15:26:59,872 p=2068 u=root |  Using module file /usr/local/lib/python3.7/site-packages/ansible/modules/system/setup.py
+2022-02-06 15:26:59,873 p=2068 u=root |  <leaf-01> PUT /root/.ansible/tmp/ansible-local-20687c974yo0/tmpblrbz3d5 TO /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409/AnsiballZ_setup.py
+2022-02-06 15:26:59,875 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409/ /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409/AnsiballZ_setup.py && sleep 0'
+2022-02-06 15:26:59,897 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'python /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409/AnsiballZ_setup.py && sleep 0'
+2022-02-06 15:27:08,005 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1644161219.0792434-64003586875409/ > /dev/null 2>&1 && sleep 0'
+2022-02-06 15:27:08,052 p=2068 u=root |  ok: [leaf-01]
+2022-02-06 15:27:08,054 p=2068 u=root |  META: ran handlers
+2022-02-06 15:27:08,077 p=2068 u=root |  TASK [Deploy Configuration] ******************************************************************************************************************************************************
+2022-02-06 15:27:08,077 p=2068 u=root |  task path: /root/ansible-junos-evpn-vxlan/final_config_push.yml:14
+2022-02-06 15:27:08,137 p=2068 u=root |  <192.168.2.6> using connection plugin netconf (was local)
+2022-02-06 15:27:08,871 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_7.3)
+2022-02-06 15:27:09,034 ncclient.transport.ssh Authentication (publickey) successful!
+2022-02-06 15:27:09,189 ncclient.transport.ssh [host 192.168.2.6 session 0x7f8260de9d90] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:hello xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0"><nc:capabilities><nc:capability>urn:ietf:params:netconf:base:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:base:1.1</nc:capability><nc:capability>urn:ietf:params:netconf:capability:writable-running:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:candidate:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:confirmed-commit:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:rollback-on-error:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:startup:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:url:1.0?scheme=http,ftp,file,https,sftp</nc:capability><nc:capability>urn:ietf:params:netconf:capability:validate:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:xpath:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:notification:1.0</nc:capability><nc:capability>urn:liberouter:params:netconf:capability:power-control:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:interleave:1.0</nc:capability><nc:capability>urn:ietf:params:netconf:capability:with-defaults:1.0</nc:capability></nc:capabilities></nc:hello>]]>]]>
+2022-02-06 15:27:09,299 ncclient.transport.ssh [host 192.168.2.6 session 0x7f8260de9d90] Received message from host
+2022-02-06 15:27:09,301 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] initialized: session-id=42921 | server_capabilities=<dict_keyiterator object at 0x7f8260e27ad0>
+2022-02-06 15:27:09,394 p=2068 u=root |  loaded netconf plugin for network_os junos
+2022-02-06 15:27:09,394 p=2068 u=root |  network_os is set to junos
+2022-02-06 15:27:09,395 p=2068 u=root |  ssh connection done, starting ncclient
+2022-02-06 15:27:09,395 p=2068 u=root |  <192.168.2.6> ESTABLISH NETCONF SSH CONNECTION FOR USER: kashif on PORT 830 TO 192.168.2.6
+2022-02-06 15:27:09,395 p=2068 u=root |  ncclient manager object created successfully
+2022-02-06 15:27:09,398 p=2068 u=root |  <leaf-01> ESTABLISH LOCAL CONNECTION FOR USER: root
+2022-02-06 15:27:09,398 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'echo ~root && sleep 0'
+2022-02-06 15:27:09,417 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780 `" && echo ansible-tmp-1644161229.3969955-22210333666780="` echo /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780 `" ) && sleep 0'
+2022-02-06 15:27:09,722 p=2068 u=root |  Using module file /usr/local/lib/python3.7/site-packages/ansible/modules/network/junos/junos_config.py
+2022-02-06 15:27:09,723 p=2068 u=root |  <leaf-01> PUT /root/.ansible/tmp/ansible-local-20687c974yo0/tmpn1f78etq TO /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780/AnsiballZ_junos_config.py
+2022-02-06 15:27:09,725 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780/ /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780/AnsiballZ_junos_config.py && sleep 0'
+2022-02-06 15:27:09,750 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'python /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780/AnsiballZ_junos_config.py && sleep 0'
+2022-02-06 15:27:09,969 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'ExecuteRpc'
+2022-02-06 15:27:10,004 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:c433b350-9b1c-4726-b28d-4e9edf616df0"><nc:get-software-information/></nc:rpc>]]>]]>
+2022-02-06 15:27:10,252 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:10,259 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'Lock'
+2022-02-06 15:27:10,354 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:2e7f57de-0e81-42d9-aef1-e59cd48b1443"><nc:lock><nc:target><nc:candidate/></nc:target></nc:lock></nc:rpc>]]>]]>
+2022-02-06 15:27:10,359 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:10,366 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'LoadConfiguration'
+2022-02-06 15:27:10,461 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:62040c1f-d632-44de-b0d3-4202384c3b62"><nc:load-configuration action="merge" format="text"><nc:configuration-text>/* This block of configuration has been generated by the role underlay-ebgp for Ansible */
+
+groups {
+    GR-CORE-INTF {
+        interfaces {
+            &lt;*&gt; {
+                traps;
+                mtu 9216;
+                hold-time up 5000 down 0;
+               
+            }
+        }
+    }
+    GR-EDGE-INTF {
+        interfaces {
+            &lt;*&gt; {
+                traps;
+                mtu 9118;
+                hold-time up 5000 down 0;
+            }
+			&lt;ae*&gt; {
+                aggregated-ether-options {
+                    lacp {
+                        active;
+                        periodic fast;
+                    }
+                }
+            }
+			
+        }
+    }
+}
+
+interfaces {
+       replace:
+    xe-0/0/0 {
+         apply-groups GR-CORE-INTF;
+        description " * to spine-01";
+        unit 0 {
+            family inet {
+                address 100.0.1.5/31;
+            }
+        }
+    }
+       replace:
+    xe-0/0/1 {
+         apply-groups GR-CORE-INTF;
+        description " * to spine-02";
+        unit 0 {
+            family inet {
+                address 100.0.1.9/31;
+            }
+        }
+    }
+lo0 {
+    unit 0 {
+        family inet {
+            address 172.1.1.5;
+        }
+    }
+}
+}
+
+protocols {
+    bgp {
+        log-updown;
+        graceful-restart;
+        replace:
+        group underlay {
+            export  bgp-ipclos-out;
+            import bgp-ipclos-in;
+            type external;
+            mtu-discovery;
+            local-as 65002;
+            multipath multiple-as;
+            neighbor 100.0.1.4 {
+                peer-as 65000;
+            }
+            neighbor 100.0.1.8 {
+                peer-as 65001;
+            }
+        }
+    }
+}
+
+routing-options {
+    router-id 172.1.1.5;
+    forwarding-table {
+        export pfe-ecmp;
+    }
+}
+
+policy-options {
+    policy-statement pfe-ecmp {
+        then {
+            load-balance per-packet;
+        }
+    }
+
+
+    policy-statement bgp-ipclos-out {
+        term loopback {
+            from {
+                protocol direct;
+                route-filter 172.1.1.5/32 exact;
+            }
+            then {
+                accept;
+            }
+        }
+ 
+        term vrouter_transport {
+            from {
+                route-filter 192.168.254.0/24 longer;
+
+            }
+            then {
+                accept;
+            }
+        }
+       term reject {
+         then reject;
+           }
+    }
+   
+    policy-statement bgp-ipclos-in {
+        term loopbacks {
+            from {
+                route-filter 172.1.1.0/24 orlonger;
+            }
+            then {
+                accept;
+             }
+        }
+        term reject {
+         then reject;
+           }
+    }
+}
+
+</nc:configuration-text></nc:load-configuration></nc:rpc>]]>]]>
+2022-02-06 15:27:10,479 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:10,483 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'Validate'
+2022-02-06 15:27:10,580 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:7bbf9ba2-5db8-4d46-9069-538173d698d2"><nc:validate><nc:source><nc:candidate/></nc:source></nc:validate></nc:rpc>]]>]]>
+2022-02-06 15:27:11,743 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:11,748 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'ExecuteRpc'
+2022-02-06 15:27:11,845 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:05c745e7-6ae6-4370-877f-93f305f30d84"><get-configuration compare="rollback" format="text" rollback="0"/></nc:rpc>]]>]]>
+2022-02-06 15:27:12,042 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:12,048 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'ExecuteRpc'
+2022-02-06 15:27:12,144 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:70bc097c-3cee-4645-a4cd-2f7412bd6156"><nc:commit-configuration><nc:log>Pushed the configuration</nc:log></nc:commit-configuration></nc:rpc>]]>]]>
+2022-02-06 15:27:14,618 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:14,624 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'Unlock'
+2022-02-06 15:27:14,720 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:f80194d4-469e-4fdc-8d81-db179529e011"><nc:unlock><nc:target><nc:candidate/></nc:target></nc:unlock></nc:rpc>]]>]]>
+2022-02-06 15:27:14,817 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:14,843 p=2068 u=root |  <leaf-01> EXEC /bin/sh -c 'rm -f -r /root/.ansible/tmp/ansible-tmp-1644161229.3969955-22210333666780/ > /dev/null 2>&1 && sleep 0'
+2022-02-06 15:27:14,882 p=2068 u=root |  changed: [leaf-01] => {
+    "changed": true,
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "backup": false,
+            "backup_options": null,
+            "check_commit": true,
+            "comment": "Pushed the configuration",
+            "confirm": 0,
+            "confirm_commit": false,
+            "host": null,
+            "lines": null,
+            "password": null,
+            "port": null,
+            "provider": {
+                "host": "192.168.2.6",
+                "password": null,
+                "port": 830,
+                "ssh_keyfile": "/root/.ssh/ida_rsa",
+                "timeout": null,
+                "transport": "netconf",
+                "username": "kashif"
+            },
+            "replace": null,
+            "rollback": null,
+            "src": "/* This block of configuration has been generated by the role underlay-ebgp for Ansible */\n\ngroups {\n    GR-CORE-INTF {\n        interfaces {\n            <*> {\n                traps;\n                mtu 9216;\n                hold-time up 5000 down 0;\n               \n            }\n        }\n    }\n    GR-EDGE-INTF {\n        interfaces {\n            <*> {\n                traps;\n                mtu 9118;\n                hold-time up 5000 down 0;\n            }\n\t\t\t<ae*> {\n                aggregated-ether-options {\n                    lacp {\n                        active;\n                        periodic fast;\n                    }\n                }\n            }\n\t\t\t\n        }\n    }\n}\n\ninterfaces {\n       replace:\n    xe-0/0/0 {\n         apply-groups GR-CORE-INTF;\n        description \" * to spine-01\";\n        unit 0 {\n            family inet {\n                address 100.0.1.5/31;\n            }\n        }\n    }\n       replace:\n    xe-0/0/1 {\n         apply-groups GR-CORE-INTF;\n        description \" * to spine-02\";\n        unit 0 {\n            family inet {\n                address 100.0.1.9/31;\n            }\n        }\n    }\nlo0 {\n    unit 0 {\n        family inet {\n            address 172.1.1.5;\n        }\n    }\n}\n}\n\nprotocols {\n    bgp {\n        log-updown;\n        graceful-restart;\n        replace:\n        group underlay {\n            export  bgp-ipclos-out;\n            import bgp-ipclos-in;\n            type external;\n            mtu-discovery;\n            local-as 65002;\n            multipath multiple-as;\n            neighbor 100.0.1.4 {\n                peer-as 65000;\n            }\n            neighbor 100.0.1.8 {\n                peer-as 65001;\n            }\n        }\n    }\n}\n\nrouting-options {\n    router-id 172.1.1.5;\n    forwarding-table {\n        export pfe-ecmp;\n    }\n}\n\npolicy-options {\n    policy-statement pfe-ecmp {\n        then {\n            load-balance per-packet;\n        }\n    }\n\n\n    policy-statement bgp-ipclos-out {\n        term loopback {\n            from {\n                protocol direct;\n                route-filter 172.1.1.5/32 exact;\n            }\n            then {\n                accept;\n            }\n        }\n \n        term vrouter_transport {\n            from {\n                route-filter 192.168.254.0/24 longer;\n\n            }\n            then {\n                accept;\n            }\n        }\n       term reject {\n         then reject;\n           }\n    }\n   \n    policy-statement bgp-ipclos-in {\n        term loopbacks {\n            from {\n                route-filter 172.1.1.0/24 orlonger;\n            }\n            then {\n                accept;\n             }\n        }\n        term reject {\n         then reject;\n           }\n    }\n}\n\n",
+            "src_format": null,
+            "ssh_keyfile": null,
+            "timeout": null,
+            "transport": null,
+            "update": "merge",
+            "username": null,
+            "zeroize": false
+        }
+    }
+}
+2022-02-06 15:27:14,884 p=2068 u=root |  META: ran handlers
+2022-02-06 15:27:14,885 p=2068 u=root |  META: ran handlers
+2022-02-06 15:27:14,887 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'CloseSession'
+2022-02-06 15:27:14,919 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Sending:
+<?xml version="1.0" encoding="UTF-8"?><nc:rpc xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:891691fc-b9cf-4940-b8a3-327b99c4eb6b"><nc:close-session/></nc:rpc>]]>]]>
+2022-02-06 15:27:14,939 ncclient.transport.ssh [host 192.168.2.6 session-id 42921] Received message from host
+2022-02-06 15:27:14,947 p=2068 u=root |  PLAY RECAP ***********************************************************************************************************************************************************************
+2022-02-06 15:27:14,947 p=2068 u=root |  leaf-01                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-02-06 15:27:15,046 ncclient.operations.rpc [host 192.168.2.6 session-id 42921] Requesting 'CloseSession'
+2022-02-06 15:27:15,047 p=2114 u=root |  shutdown complete
+2022-02-06 17:11:34,130 p=34 u=root |  leaf-01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 17:11:34,133 p=34 u=root |  spine-02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 17:11:34,134 p=34 u=root |  spine-01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2022-02-06 17:11:34,135 p=34 u=root |  leaf-02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}

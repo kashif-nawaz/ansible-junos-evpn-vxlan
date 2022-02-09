@@ -1,0 +1,28 @@
+---
+
+- name: Examples of juniper_junos_ping
+  hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: get vars
+    include_vars:
+       file: "{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/generated-underlay-vars.yaml"
+
+  - name: validate lldp neighbors are the ones we excpect 
+    junos_command:
+      provider: "{{ credential }}"
+      display: 'xml'
+      commands:
+        - show lldp neighbors interface "{{ item.interface }}"
+      waitfor:
+        - "result[0]['rpc-reply']['lldp-neighbors-information']['lldp-neighbor-information']['lldp-remote-system-name'] == {{ item.name }}"
+      retries: 3
+      interval: 3
+    register: response
+    with_items:
+    - "{{ underlay.neighbors }}"
+  - name: print
+    debug:
+        var: response.results

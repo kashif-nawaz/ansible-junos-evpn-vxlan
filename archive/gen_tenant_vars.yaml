@@ -1,0 +1,7 @@
+---
+- name: generate-tenant-vars
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+    - generate-tenant-vars

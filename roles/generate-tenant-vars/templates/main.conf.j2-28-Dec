@@ -1,0 +1,63 @@
+{% if 'leaf' in group_names %}
+INFRA_NW:
+{% for nw in infra_nw %}
+
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vlan_id}}
+   rt: target:1:{{nw.vlan_id}}
+   MODE: {{nw.MODE}}
+{% if nw.MODE=='ERB' and nw.L3_if is sameas true %}
+   RE_DISTI_Underlay: {{nw.RE_DIST_Underlay}}
+{% if nw.VRF is sameas true %}
+   vrf: VRF_{{nw.name}}
+{% endif %}
+   L3_if: 
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% if nw.MODE=='CRB' and nw.CRB_VS is defined %}
+{% for vs in crb_vs %}
+{% if vs.name==nw.CRB_VS %}
+   CRB_VS: {{vs.name}}
+   CRB_VS_RT: target:{{overlay_as}}:{{vs.RT}}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+
+{% elif  'spine' in group_names %}
+INFRA_NW: 
+{% for nw in infra_nw %}
+{% if nw.MODE=='CRB' %}
+ - vlan_name: {{ nw.name }}
+   vni: {{ nw.vlan_id}}
+   rt: target:1:{{nw.vlan_id}}
+   MODE: {{nw.MODE}}
+{% if nw.VRF is sameas true %}
+   vrf: VRF_{{nw.name}}
+{% endif %}
+{% if nw.MODE=='CRB' and nw.CRB_VS is defined %}
+{% for vs in crb_vs %}
+{% if vs.name==nw.CRB_VS %}
+   CRB_VS: {{vs.name}}
+   CRB_VS_RT: target:{{overlay_as}}:{{vs.RT}}
+{% endif %}
+{% endfor %}
+{% endif %}
+{%if nw.L3_if is sameas true %}
+   L3_if:
+      anycast_gw: {{ nw.subnet | ipaddr(1) | ipaddr('address') }}
+{% for host in groups['spine'] %}
+{% if 'spine' in group_names and (inventory_hostname  in host) %}
+{% set  i = hostvars[host].id+1 %}
+      IRB_IP:  {{nw.subnet.split('.')[0:3] | join('.')}}.{{i}}/{{ nw.subnet | ipaddr('prefix') }}
+{% endif %}
+{% endfor %}
+    
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+ 
+{% endif %}

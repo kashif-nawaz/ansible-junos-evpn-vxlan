@@ -1,0 +1,7 @@
+---
+- name: generate-evpn-access
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+  - generate-evpn-access

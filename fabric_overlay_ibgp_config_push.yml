@@ -1,0 +1,22 @@
+---
+
+############################################################
+- name: Push MP-IBGP config in underlay fabric 
+  hosts: all
+  connection: local
+  vars:
+     config_file_path: "{{ lookup('fileglob', '{{playbook_dir}}/host_vars/{{site}}/{{inventory_hostname}}/overlay-ibgp*') }}"
+
+############################################################
+  tasks:
+############################################################
+  - name: Deploy Configuration
+    junos_config:
+      check_commit: yes
+      provider: "{{ credential }}"
+#      confirm_commit: yes
+      update: merge
+      src: "{{ config_file_path }}"
+      comment: "Pushed the configuration"
+    register: config_result
+    failed_when: config_result.failed == true

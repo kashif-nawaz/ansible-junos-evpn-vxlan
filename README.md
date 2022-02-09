@@ -2,8 +2,8 @@
 * Group of Ansible playbooks to generate IP Fabric + EVPN configuration.
 * For IP Fabric Deployment.  
 ![fabric_design](./images/fabric_design.png)
-* In addition to IP Fabric if Contrail-Networking is deployed as SDN Controller along with Open stack, then Spine Devices will have MP-IBGP connections with Contrail Contollers a
-* Contrail vRouter will have  MPLSoUDP tunnels with  Spine devices / DC gateways
+* In addition to IP Fabric if Contrail-Networking is deployed as SDN Controller along with Open stack, then Spine Devices will have MP-IBGP for control plane connections with Contrail Contollers
+* Contrail vRouters will have  MPLSoUDP tunnels with  Spine devices / DC gateways for forwarding plane
 ![Contrail Use Case](./images/cn_deployment.png)
 * Contrail Virtual Networks can be extended to Spines/ DC-Gateways and then further hand over to PE Routers via Inter AS Option A 
 ![Virtual network extension](./images/vn_extn.png)
